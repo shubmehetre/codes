@@ -5,4 +5,4 @@ print(name[:3].capitalize())
 
 print('some change')
 print('checking pull and fetch')
-print('making changes using vi editor')
+print('making changes using vi editor for practise')
