@@ -1,1 +1,1 @@
-print('Prime nos finding')
+print('Prime nos finding ')
