@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 
-git add .
-git commit -m "routine"
-git push origin master
+cd /home/subz3ro/zzz/synced/EDU/repos/Python-Codes
+git -C  /home/subz3ro/zzz/synced/EDU/repos/Python-Codes add .
+git -C  /home/subz3ro/zzz/synced/EDU/repos/Python-Codes commit -m "routine"
+git -C  /home/subz3ro/zzz/synced/EDU/repos/Python-Codes push origin master
 
