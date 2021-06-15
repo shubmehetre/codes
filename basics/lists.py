@@ -63,8 +63,7 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris']
 
 guests = ["ram", "gandhi", "Newton", "Rajesh"]
 
-print(guests[11]) # to solve index errors
-
+print(guests[1]) # to solve index errors
 
 # print(f'I have invited {guests[0]}')
 # print(f'I have invited {guests[1]}')

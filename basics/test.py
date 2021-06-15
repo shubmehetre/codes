@@ -32,11 +32,11 @@
 # print(total)
 ##########################################################
 
-binary_no1 = 0b111111111111111111111111111111111
+binary_no1 = 0b11111111
 binary_no2 = 0b1011
 #
 
-print(len(int))
+# print(len(int))
 # print(f'THE BIT len is {binary_no.bit_length()}')
 
 #(not(binary_no))
@@ -57,42 +57,5 @@ print(len(int))
 # print(z)
 
 print(binary_no1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
