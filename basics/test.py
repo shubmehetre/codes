@@ -18,12 +18,10 @@
 # print("okay you said " + word)
 
 ######################################################
-# Properly using apostrophes
+# # Properly using apostrophes
 
 # message = "she's rude  "
 # print(message)
-
-###
 
 # person = "Charles Bakawski"
 # quote = "Don't try"
@@ -32,14 +30,14 @@
 # print(total)
 ##########################################################
 
-binary_no1 = 0b11111111
-binary_no2 = 0b1011
-#
+# binary_no1 = 0b11111111
+# binary_no2 = 0b1011
+
 
 # print(len(int))
 # print(f'THE BIT len is {binary_no.bit_length()}')
 
-#(not(binary_no))
+# (not(binary_no))
 
 # print(binary_no1 & binary_no2)
 
@@ -56,6 +54,6 @@ binary_no2 = 0b1011
 # z = binary_no1 << 1
 # print(z)
 
-print(binary_no1)
+# print(binary_no1)
 
 
