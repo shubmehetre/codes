@@ -15,7 +15,7 @@
 # for i in range(1,5):
 #     print(i)
 
-# # O/P 
+# # O/P
 # 1
 # 2
 # 3
@@ -77,28 +77,31 @@
 #      print(f'square of {i} is {square_list[i-1]}')
 #############################################################
 
-new_list = list (range(1,11))
-print(new_list)
+#new_list = list (range(1,11))
+#print(new_list)
+#
+#print(f'using min function : {min(new_list)}')
+#print(f'using man function : {max(new_list)}')
+#print(f'using sum function : {sum(new_list)}')
+#############################################################
+# using list comprehensions
 
-print(f'using min function : {min(new_list)}')
-print(f'using man function : {max(new_list)}')
-print(f'using sum function : {sum(new_list)}')
+# [print(i+1) for i in range(1,10)]
+#############################################################
+# millions of numbers in a list
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# mil_list = list(range (1,1000000))
+# print(max(mil_list))
+# print(sum(mil_list))
+#############################################################
+# testing
+# [print(i) for i in range(1,21,2)]
+#############################################################
+## looping through a sliced list
+##
+## list1 = ['0', '1','2','3','4','5']
+##
+## for i in list1[1:3]:
+##     print(i)
+#############################################################
 

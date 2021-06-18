@@ -76,9 +76,9 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 
 ######################################################################
 
-guests = ["ram", "gandhi", "Newton", "Rajesh"]
-
-print(guests[1]) # to solve index errors
+#guests = ["ram", "gandhi", "Newton", "Rajesh"]
+#
+#print(guests[1]) # to solve index errors
 
 # print(f'I have invited {guests[0]}')
 # print(f'I have invited {guests[1]}')
@@ -158,35 +158,27 @@ print(guests[1]) # to solve index errors
 # ['zxc', '2']
 
 
-# sort() method to sort a list of strings in ascending order. 
-# sort() method considers ASCII values of the characters while comparing strings. 
-# Hence, sort() treats a and A as different characters and a is greater than A , 
+# sort() method to sort a list of strings in ascending order.
+# sort() method considers ASCII values of the characters while comparing strings.
+# Hence, sort() treats a and A as different characters and a is greater than A ,
 # since ASCII value of a is 97 and A is 65 .
 
 # num_list1 = ['3', '1', '4', '2', 'asd', 'ZXC', '$', '#', 'A', '@']
 # num_list1.sort()
 # print(num_list1)
 
-# # O/P - 
+# # O/P -
 # ['#', '$', '1', '2', '3', '4', '@', 'A', 'ZXC', 'asd']
 
+######################################################################
+## copy a list
+#
+#main_list = ['a','z','g']
+#not_main = main_list
+#print(not_main)
+#
+#not_main.append('k')
+#
+#print(main_list)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+######################################################################
