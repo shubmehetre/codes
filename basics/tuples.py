@@ -18,8 +18,7 @@ tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 # <class 'tuple'>
 ##########################################################################################
 
-#looping
-## practice
+#looping ## practice
 buffet_items = ("dal", "chaval", "roti", "sabji", "sweet")
 
 for i in buffet_items:
