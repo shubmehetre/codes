@@ -66,3 +66,24 @@
 # done!!
 ########################################################################################
 ##
+# name = ''
+# while True:
+#     name = input('Enter your name : \n')
+#     if (name == 'your name'):
+#         break
+# print("byebye")
+
+# continue - skips current iteration and just to next iteratin
+# num = 6
+# while num > 0:
+#     num = num - 1
+#     if num == 2:
+#         continue
+#     print('num is ' + str(num))
+# O/P
+# num is 5
+# num is 4
+# num is 3
+# num is 1
+# num is 0
+

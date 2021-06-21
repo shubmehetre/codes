@@ -104,4 +104,39 @@
 ## for i in list1[1:3]:
 ##     print(i)
 #############################################################
+## WHILE LOOP
+# prompt = "\nTell me something, and I will repeat it back to you:"
+# prompt += "\nEnter 'quit' to end the program. "
+#
+# # asd = input("enter name")
+#
+# x = ""
+#!while x != 'quit':
+#     x = input(prompt)
+#     if x != 'quit':
+#         print(x)
 
+## removing instances of specific values from a list
+# list1 = [1,2,3,4,3,2,4,3,4,2,1]
+#
+# while 1 in list1:
+#     list1.remove(1)
+# print(list1)
+# # O/P
+# [2, 3, 4, 3, 2, 4, 3, 4, 2]
+#############################################################
+## Using Flags
+
+# prompt = "\nTell me something, and I will repeat it back to you:"
+# prompt += "\nEnter 'quit' to end the program. "
+#
+# active = True             ## This is our flag
+#
+# x = ""
+# while active:
+#     x = input(prompt)
+#     if x != 'quit':
+#         print(x)
+#     else:
+#         active = False
+# #############################################################

@@ -78,6 +78,7 @@
 # # ('name', 'sam')
 # # ('age', 22)
 # # ('status', 'married')
+# # Remember, .items will return a tuple with key and values as its elements respectively
 #
 # for keys in dict4.keys():
 #     print(keys)
@@ -92,4 +93,63 @@
 # # sam
 # # 22
 # # married
+
+## Looping in specific order
+
+# for keys in sorted(dict4.keys()):
+#     print(keys)
+# O/P
+# age
+# name
+# status
+#######################################################################################
+## practice
+# dict1 = {"Nile": "Egypy", "Ganges": "India", "Thames":"UK"}
+#
+# for i in dict1.items():
+#      print(f"The {i[0]} runs through {i[1]}")
+# print()
+# for i in dict1.values():
+#      print(f"{i} is Great")
+# print()
+# for i in dict1.keys():
+#     print(f"{i} is a river")
+#######################################################################################
+
+# dict1 = {"one": [1,3,4], "two": 2 }
+# list1 = [[1,2,3], ['z','x','c','a']]
+#
+# print(len((list1)[0]))
+#
+# print(range(len(list1)))
+#
+# for i in (range(len((list(dict1.values()))[0]))):
+#     print(i)
+#######################################################################################
+## Using flags in dicts
+
+## Filling a dict with polling data
+# responses_dict = {}                         # declared a empty dict
+#
+# polling_is_active = True
+#
+# while polling_is_active:
+#     name = input("Enter name: ")
+#     response = input("VOTE:\n1.bjp\n2.congress\n3.MNS\n4.shivsena\ntype here: ")
+#
+#     # store response in a dict
+#     responses_dict[name] = response
+#
+#     repeat = input("Is someone left to vote(yes/no): ")
+#     if repeat == "no":
+#         polling_is_active = False
+#
+# print("Polling is Complete")
+# print()
+# print("RESULTS")
+#
+# for name,response in responses_dict.items():
+#     print(f"{name.title()} voted for {response}")
+
+
 
