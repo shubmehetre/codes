@@ -182,3 +182,13 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 #print(main_list)
 
 ######################################################################
+nums = [1,2,3,4,5]
+
+## if odd then square the element and append in new list
+
+squared_odds = [
+    n**2
+    for n in nums
+    if n%2 == 1
+]
+print(squared_odds)
