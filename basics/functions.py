@@ -85,3 +85,83 @@
 # O/P
 # 30
 ############################################################################
+## Function that puts fname and lname in a dict and then returns it.
+##
+# def make_dict(fname,lname):
+#     person_dict = {"name":fname, "surname":lname}
+#     return person_dict
+
+# person_dict = make_dict("sam", "baxter")
+# print((person_dict.keys()))
+# # O/P
+# # dict_keys(['name', 'surname'])
+# print(list(person_dict.keys()))
+# # O/P
+# # ['name', 'surname']
+
+# ## Using default value
+# def make_dict(fname,lname,age=None):
+#     person_dict = {"name":fname, "surname":lname}
+#     if age:
+#         person_dict["age"]= age
+#     return person_dict
+
+# person_dict = make_dict("sam", "baxter")
+# print(person_dict)
+############################################################################
+## 
+## Passing and modifying List in a function
+# import time
+
+# def list_modifier(list_of_names):
+#     print("Our guests for tonignt are ")
+#     print()
+#     for i in list_of_names:
+#         print(f"Hello {i.title()}")
+#         time.sleep(1)
+#     time.sleep(5)
+
+#     while list_of_names:
+#         x = list_of_names.pop()
+#         print(f"{x} has left the chat")
+#         time.sleep(1)
+
+#     print()
+#     print("Tq for being here.")
+# list1 = ['john', 'seema', 'garuda', 'triveni', 'shankaracharya', 'cardib']
+# list_modifier(list1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
