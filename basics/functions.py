@@ -130,6 +130,9 @@
 #     print("Tq for being here.")
 # list1 = ['john', 'seema', 'garuda', 'triveni', 'shankaracharya', 'cardib']
 # list_modifier(list1)
+############################################################################
+## 
+## Making a copy of a 
 
 
 
