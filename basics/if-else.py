@@ -73,7 +73,7 @@
 #         break
 # print("byebye")
 
-# continue - skips current iteration and just to next iteratin
+# continue - skips current iteration and just go to conditions check
 # num = 6
 # while num > 0:
 #     num = num - 1
@@ -87,3 +87,5 @@
 # num is 1
 # num is 0
 
+for i in range(3,-1):
+    print(i)

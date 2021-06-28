@@ -33,7 +33,7 @@
 #############################################################################
 ##
 ## TYPES of args
-# 
+######################################
 ## Positional arg
 # def greeting(fname, lname):
 #     print(f"Hi {fname} {lname}")
@@ -44,7 +44,7 @@
 # O/P
 # Hi sam baxter
 # Hi baxter sam
-
+######################################
 ## Keyword arg
 # def greeting(fname, lname):
 #     print(f"Hi {fname} {lname}")
@@ -55,7 +55,7 @@
 # O/P
 # Hi sam baxter
 # Hi sam baxter
-
+######################################
 ## Default arg
 # def greeting(fname, lname="baxter"):
 #     print(f"Hi {fname} {lname}")
@@ -64,8 +64,7 @@
 
 # O/P
 # Hi sam baxter
-
-##
+########################################
 ## Empty default values
 # def greetings(fname,midname, lname):
 #     return (f"Hi {fname} {midname} {lname}")
@@ -132,25 +131,73 @@
 # list_modifier(list1)
 ############################################################################
 ## 
-## Making a copy of a 
+## Passing a copy of list in fuction 
+
+# def send_list_copy(alpha_list):
+#     alpha_list.append('d')
+#     print(alpha_list)
+
+# alpha_list = ['a','b','c']
+# beta_LIST = alpha_list[:]
+# print(f"{beta_LIST} : this is beta")
+# send_list_copy(alpha_list)
+# ## cannot i guess
+######################################################################################################################################################
+## 
+## PAssing arbitary num of args
+# new_list = []
+# def arbitary_args(*args):
+#     return args                    # returns a tuple. *x is actually a tuple that consist of arbitary num of args that are passed.
+
+# toppings = arbitary_args('cheese','mushrooms','olives','onion')
+# for i in toppings:
+#     print(f"adding {i}")
+######################################################################################################################################################
+##
+# def arbitary2(x,*y):            ## we can use only one arbitary arg in one fun. place it at the end always
+#     print(f"x is {x}")
+#     print(f"y is {y}")
+
+# arbitary2('a','b','c')
+# O/P
+# x is a
+# y is ('b', 'c')
+## function will consider args before positionally, after all are allocated with values, rest all are considered arbitary
+######################################################################################################################################################
+##
+## passing multiple keyworded args. 
+## As we saw b4, we can also keyword args to a function. 
+# like
+# def kw_fun(fname="sam", lname="baxter")
+## As above we can also pass. arbitrary num of keyword argument ie kwarg.
+# def arbitraty_kwargs(**kwargs):                     ## this is a dictionary. with key as arg name, and value as arg's value
+#     print(kwargs)
+
+# arbitraty_kwargs(fname="sam", lname="baxter")
+# O/P
+# {'fname': 'sam', 'lname': 'baxter'}
+####################################################################################################################################################
+##
+## practice
+def sandwich_items(name, items):
+    for i in items:
+        print(f"adding {i}...")
+    print("done!! Bon Apetite")
 
 
+print(f"Hi! Welcome to SandMan Sandwiches :)")
+name = input("wat ur name?  ")
+print("you have 10 choices, choose 3 :\n1.Cheese\n2.Mayo\n3.Onion\n4.Chilli\n5.Anchovies\n6.Olives\n7.Corn\n8.Capsicum\n9.Mushroom\n10.Paneer")
+
+list1 = []
+for i in range(4,0,-1):
+    selection = input(f"{i} choices left {name}  : ")
+    list1.append(selection)
+#print(items)
+sandwich_items(name, list1)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
