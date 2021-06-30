@@ -182,13 +182,42 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 #print(main_list)
 
 ######################################################################
-nums = [1,2,3,4,5]
-
+# nums = [1,2,3,4,5]
+# nums2 = [6,7,8,9]
 ## if odd then square the element and append in new list
 
-squared_odds = [
-    n**2
-    for n in nums
-    if n%2 == 1
-]
-print(squared_odds)
+# squared_odds = [
+#     n**2
+#     for n in nums
+#     if n%2 == 1
+# ]
+# print(squared_odds)
+# # O/P
+# # [1, 9, 25]
+######################################################################
+## extend function
+# nums = [1,2,3,4,5]
+# nums2 = [6,7,8,9]
+# nums.extend(nums2)
+# # nums.insert(0, 7)
+# print(nums)
+# # O/P
+# # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+def show_magicians(magicians):
+    for magician in magicians:
+        print (magician.title())
+
+def make_great(magicians):
+    while magicians:
+        x = magicians.pop()
+        new_magicians.append(x)
+        print (x.title() + ", is a great magician!!")
+
+new_magicians = []
+magicians = ['merlin', 'blaine', 'agaybi', 'copperfield']   
+show_magicians(magicians)
+print()
+make_great(magicians[:])
+print()
+print(magicians)
+print(new_magicians)
