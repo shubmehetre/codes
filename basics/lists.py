@@ -203,21 +203,29 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 # print(nums)
 # # O/P
 # # [1, 2, 3, 4, 5, 6, 7, 8, 9]
-def show_magicians(magicians):
-    for magician in magicians:
-        print (magician.title())
+# def show_magicians(magicians):
+#     for magician in magicians:
+#         print (magician.title())
 
-def make_great(magicians):
-    while magicians:
-        x = magicians.pop()
-        new_magicians.append(x)
-        print (x.title() + ", is a great magician!!")
+# def make_great(magicians):
+#     while magicians:
+#         x = magicians.pop()
+#         new_magicians.append(x)
+#         print (x.title() + ", is a great magician!!")
 
-new_magicians = []
-magicians = ['merlin', 'blaine', 'agaybi', 'copperfield']   
-show_magicians(magicians)
-print()
-make_great(magicians[:])
-print()
-print(magicians)
-print(new_magicians)
+# new_magicians = []
+# magicians = ['merlin', 'blaine', 'agaybi', 'copperfield']   
+
+# show_magicians(magicians)
+# print()
+# make_great(magicians[:])
+# print()
+
+# print(magicians)
+# print(new_magicians)
+list1 = [1,2,3]
+list2 = list1         
+
+list1.append(4)
+print(list1)
+print(list2)

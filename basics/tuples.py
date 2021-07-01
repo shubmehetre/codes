@@ -1,3 +1,6 @@
+from typing import NewType
+
+
 tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 
 # ## indexing in tuples
@@ -19,14 +22,64 @@ tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 ##########################################################################################
 
 #looping ## practice
-buffet_items = ("dal", "chaval", "roti", "sabji", "sweet")
+# buffet_items = ("dal", "chaval", "roti", "sabji", "sweet")
 
-for i in buffet_items:
-    print(f'we have {i}')
-
-##########################################################################################
-
-
-
+# for i in buffet_items:
+#     print(f'we have {i}')
 
 ##########################################################################################
+# some functions
+# new_tuple = (1,2,3,4,"ram", "ram")
+# print(new_tuple.index("ram"))             ## tell first instance
+# print(new_tuple.count("ram"))             ## tells count of item in tuple
+
+# O/P
+# 4
+# 2
+##########################################################################################
+## 
+# Tuple unpacking
+# name_list = ("sam", "baxter")
+
+## make sure that number of elements in list and the unpack are same
+## fname = name_list will give error: too many elements to unpack
+# fname,lname  = name_list
+# print(fname)
+# print(lname)
+
+# O/P
+# sam
+# baxter
+
+## another way
+list1 = [1,2,3,4,5,6,7,8,9]
+
+fnum, *midnums, lnum = list1
+
+print(fnum)
+print(midnums)
+print(lnum)
+###########################################################################################
+##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

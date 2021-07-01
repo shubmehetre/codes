@@ -150,6 +150,62 @@
 #
 # for name,response in responses_dict.items():
 #     print(f"{name.title()} voted for {response}")
+#######################################################################################
+## 
+## Creating copy
+# dict1 = {"name":"shyam", "roll": 25}
+
+# ## incorrect way
+# dict2 = dict1   ## this will not create a copy of dict1. it creates new object dict2 
+#                 ## now dict1 and dict2 point to same dict
+
+# ## way 1
+# dict2 = dict(dict1)
+
+# ## way 2
+# dict2 = dict1.copy()
+#######################################################################################
+##
+## Update method
+# dict1 = {"name": "raju", "roll": 30, "place": "Goa"}
+
+# dict2 = {"name": "shyam"}
+
+# dict1.update(dict2)
+# print(dict1)
+
+# O/P
+# {'name': 'shyam', 'roll': 30, 'place': 'Goa'}
+#######################################################################################
+##
+## tuple as a key
+# dict1 = {(1,2):"haha", "name": "raiden"}
+
+# for i in dict1.keys():
+#     print(i)
+# O/P
+# (1, 2)
+# name
+
+# for i in dict1.keys():
+#     for j in i:
+#         print(j)
+# O/P
+# 1
+# 2
+# n
+# a
+# m
+# e
+#######################################################################################
+##
+dict1 = {1:1, 2:2, 3:3}
+dict2 = {"name":"jon"}
+print(dict1[1])
+print(dict2["name"])
+
+
+
 
 
 
