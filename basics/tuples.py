@@ -52,13 +52,19 @@ tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 # baxter
 
 ## another way
-list1 = [1,2,3,4,5,6,7,8,9]
+# list1 = [1,2,3,4,5,6,7,8,9]
 
-fnum, *midnums, lnum = list1
+# fnum, *midnums, lnum = list1
 
-print(fnum)
-print(midnums)
-print(lnum)
+# print(fnum)
+# print(midnums)
+# print(lnum)
+
+# O/P
+# 1
+# [2, 3, 4, 5, 6, 7, 8]
+# 9 
+
 ###########################################################################################
 ##
 

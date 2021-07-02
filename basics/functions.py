@@ -108,7 +108,7 @@
 # person_dict = make_dict("sam", "baxter")
 # print(person_dict)
 ############################################################################
-## 
+##
 ## Passing and modifying List in a function
 # import time
 
@@ -130,8 +130,8 @@
 # list1 = ['john', 'seema', 'garuda', 'triveni', 'shankaracharya', 'cardib']
 # list_modifier(list1)
 ############################################################################
-## 
-## Passing a copy of list in fuction 
+##
+## Passing a copy of list in fuction
 
 # def send_list_copy(alpha_list):
 #     alpha_list.append('d')
@@ -143,7 +143,7 @@
 # send_list_copy(alpha_list)
 # ## cannot i guess
 ######################################################################################################################################################
-## 
+##
 ## PAssing arbitary num of args
 # new_list = []
 # def arbitary_args(*args):
@@ -165,8 +165,8 @@
 ## function will consider args before positionally, after all are allocated with values, rest all are considered arbitary
 ######################################################################################################################################################
 ##
-## passing multiple keyworded args. 
-## As we saw b4, we can also keyword args to a function. 
+## passing multiple keyworded args.
+## As we saw b4, we can also keyword args to a function.
 # like
 # def kw_fun(fname="sam", lname="baxter")
 ## As above we can also pass. arbitrary num of keyword argument ie kwarg.
@@ -179,25 +179,36 @@
 ####################################################################################################################################################
 ##
 ## practice
-def sandwich_items(name, items):
-    for i in items:
-        print(f"adding {i}...")
-    print("done!! Bon Apetite")
+
+## Function where name and requested topping are passed.
+# def sandwich_items(name, items):
+#     for i in items:
+#         print(f"adding {i}...")
+#     print("done!! Bon Apetite")
+#     print(f"have a great day {name.title()}")
+#
+#
+# print(f"Hi! Welcome to SandMan Sandwiches :)")
+# name = input("wat ur name?  ")
+# print("you have 10 choices, choose 3 :\n1.Cheese\n2.Mayo\n3.Onion\n4.Chilli\n5.Anchovies\n6.Olives\n7.Corn\n8.Capsicum\n9.Mushroom\n10.Paneer")
+#
+# items_list = ["Cheese","Mayo","Onion","Chilli","Anchovies","Olives","Corn","Capsicum","Mushroom","Paneer"]
+# list1 = []
+#
+# i = 3
+#
+# while i > 0 :
+#     selection = input(f"{i} choices left {name}  : ")
+#     if selection.title() in items_list:
+#         list1.append(selection)
+#         i = i -1
+#     else:
+#         print(f"sorry we dont have {selection}")
+#
+# sandwich_items(name, list1)
 
 
-print(f"Hi! Welcome to SandMan Sandwiches :)")
-name = input("wat ur name?  ")
-print("you have 10 choices, choose 3 :\n1.Cheese\n2.Mayo\n3.Onion\n4.Chilli\n5.Anchovies\n6.Olives\n7.Corn\n8.Capsicum\n9.Mushroom\n10.Paneer")
 
-list1 = []
-for i in range(4,0,-1):
-    selection = input(f"{i} choices left {name}  : ")
-    list1.append(selection)
-#print(items)
-sandwich_items(name, list1)
-
-
-    
 
 
 

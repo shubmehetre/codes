@@ -223,9 +223,4 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 
 # print(magicians)
 # print(new_magicians)
-list1 = [1,2,3]
-list2 = list1         
-
-list1.append(4)
-print(list1)
-print(list2)
+#  
