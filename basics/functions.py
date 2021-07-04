@@ -133,15 +133,15 @@
 ##
 ## Passing a copy of list in fuction
 
-# def send_list_copy(alpha_list):
-#     alpha_list.append('d')
-#     print(alpha_list)
+def send_list_copy(alpha_list):
+    alpha_list.append('d')
+    print(alpha_list)
 
-# alpha_list = ['a','b','c']
-# beta_LIST = alpha_list[:]
-# print(f"{beta_LIST} : this is beta")
-# send_list_copy(alpha_list)
-# ## cannot i guess
+alpha_list = ['a','b','c']
+beta_LIST = alpha_list[:]
+print(f"{beta_LIST} : this is beta")
+send_list_copy(alpha_list)
+
 ######################################################################################################################################################
 ##
 ## PAssing arbitary num of args
@@ -166,10 +166,11 @@
 ######################################################################################################################################################
 ##
 ## passing multiple keyworded args.
-## As we saw b4, we can also keyword args to a function.
+## As we saw b4, we can also pass keyword args to a function.
 # like
 # def kw_fun(fname="sam", lname="baxter")
-## As above we can also pass. arbitrary num of keyword argument ie kwarg.
+
+## But as above we can also pass. arbitrary num of keyword argument ie kwarg.
 # def arbitraty_kwargs(**kwargs):                     ## this is a dictionary. with key as arg name, and value as arg's value
 #     print(kwargs)
 
@@ -180,23 +181,30 @@
 ##
 ## practice
 
-## Function where name and requested topping are passed.
-# def sandwich_items(name, items):
-#     for i in items:
-#         print(f"adding {i}...")
-#     print("done!! Bon Apetite")
-#     print(f"have a great day {name.title()}")
-#
-#
+# ## Function where name and requested topping are passed.
+# # def sandwich_items(name, items):
+# #     for i in items:
+# #         print(f"adding {i}...")
+# #     print("done!! Bon Apetite")
+# #     print(f"have a great day {name.title()}")
+# ## added this function in modules.sandwitch_modules folder
+# import socket
+# from modules.sandwitch_modules import sandwich_fun_module
+# # here we need to use sandwitch_fun_module.sandwith_items to call our function 
+# # OR 
+# from modules.sandwitch_modules.sandwich_fun_module import sandwich_items
+# # here we can directly call our function
+# # We can also do ==> from module_name import function_0, function_1, function_2
+
 # print(f"Hi! Welcome to SandMan Sandwiches :)")
 # name = input("wat ur name?  ")
 # print("you have 10 choices, choose 3 :\n1.Cheese\n2.Mayo\n3.Onion\n4.Chilli\n5.Anchovies\n6.Olives\n7.Corn\n8.Capsicum\n9.Mushroom\n10.Paneer")
-#
-# items_list = ["Cheese","Mayo","Onion","Chilli","Anchovies","Olives","Corn","Capsicum","Mushroom","Paneer"]
+
+items_list = ["Cheese","Mayo","Onion","Chilli","Anchovies","Olives","Corn","Capsicum","Mushroom","Paneer"]
 # list1 = []
-#
+
 # i = 3
-#
+
 # while i > 0 :
 #     selection = input(f"{i} choices left {name}  : ")
 #     if selection.title() in items_list:
@@ -204,8 +212,55 @@
 #         i = i -1
 #     else:
 #         print(f"sorry we dont have {selection}")
-#
-# sandwich_items(name, list1)
+
+# # if u do only sandwitch_items() it will give error: module cannot be called. We need 
+# sandwich_fun_module.sandwich_items(name, list1)
+####################################################################################################################################################
+##
+## Local and Global scope of variables
+# def local_fun():
+#     var1 = 20
+#     print(f"local scope var1 = ", var1)
+
+# local_fun()
+
+# var1 = 30
+# print(f"global scope var1 = ", var1)
+####################################################################################################################################################
+##
+## 79 character in 1 line
+def asd(
+    asd,
+    zxc,
+    qwe,
+    dfg,
+    wrt,
+    rty,
+    hgjk,
+    ety,
+    asdf,
+    dfjh,
+    asdrg,
+    ewf,
+
+):
+    print("inside fun")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
