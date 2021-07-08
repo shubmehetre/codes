@@ -133,14 +133,14 @@
 ##
 ## Passing a copy of list in fuction
 
-def send_list_copy(alpha_list):
-    alpha_list.append('d')
-    print(alpha_list)
+# def send_list_copy(alpha_list):
+#     alpha_list.append('d')
+#     print(alpha_list)
 
-alpha_list = ['a','b','c']
-beta_LIST = alpha_list[:]
-print(f"{beta_LIST} : this is beta")
-send_list_copy(alpha_list)
+# alpha_list = ['a','b','c']
+# beta_LIST = alpha_list[:]
+# print(f"{beta_LIST} : this is beta")
+# send_list_copy(alpha_list)
 
 ######################################################################################################################################################
 ##
