@@ -181,21 +181,29 @@
 # Tesla Model T 2020
 # lot of capacity
 #############################################################################################################################
-##
-## Standard Library
-import math
-import random
-import time
+# ##
+# ## Standard Library
+# import math
+# import random
+# import time
 
-list1 = [1,2,3,4,5,6,7,8,9]
-print(f"{list1}\n Shuffling the list ...")
-random.shuffle(list1)
-time.sleep(2)
-print(f"{list1}\n... Et voila!")
+# list1 = [1,2,3,4,5,6,7,8,9]
+# print(f"{list1}\n Shuffling the list ...")
+# random.shuffle(list1)
+# time.sleep(2)
+# print(f"{list1}\n... Et voila!")
 
 
-x = math.sqrt(166)
-print(f"\nsquare root : {x:.2f}")
+# x = math.sqrt(166)
+# print(f"\nsquare root : {x:.2f}")
+
+# # O/P
+# [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#  Shuffling the list ...
+# [2, 9, 6, 1, 8, 5, 7, 3, 4]
+# ... Et voila!
+
+# square root : 12.88
 
 
 

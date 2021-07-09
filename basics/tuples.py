@@ -22,7 +22,8 @@ tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 ##########################################################################################
 
 #looping ## practice
-# buffet_items = ("dal", "chaval", "roti", "sabji", "sweet")
+# buffet_items = ("dal", "chaval", "roti", "sabji", "sweet", "dal")
+# print(buffet_items)
 
 # for i in buffet_items:
 #     print(f'we have {i}')
