@@ -205,6 +205,21 @@
 
 # square root : 12.88
 
+list1 = [1,2,3,]
+dict1 = {"name": "shubham", "location": "Miami"}
+
+class Car:
+    def __init__(self, name,year):
+        self.name = name
+        self.year = year
+    
+    def print_info(self):
+        print(f"Car is : {self.name} from {self.year}")
+
+
+mycar = Car("Tesla", 2020)
+
+mycar.print_info()
 
 
 

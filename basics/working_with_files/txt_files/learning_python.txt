@@ -1,0 +1,15 @@
+Following are some things i have learned in Python so far
+1. Zen of Python
+2. Compiled vs Interpreted Languages
+3. Variables
+4. lists
+5. conditionals
+6. loops
+7. slicing
+8. dicts
+9. tuples
+10. sets
+11. functions
+12. classes
+13. modules
+14. best practices for python coding
