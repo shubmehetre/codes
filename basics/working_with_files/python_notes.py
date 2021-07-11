@@ -1,3 +1,4 @@
+"""This program shows 3 ways to print files - full, line by line, storing in list"""
 import time
 def full_content():
     with open("txt_files/learning_python.txt") as x:

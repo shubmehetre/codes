@@ -100,36 +100,134 @@
 # # programming is funn!
 # # this is appended text
 ############################################################
-##
-# ## try-except
-# ## divided by 0 exception
-# try:
-#     divisor = int(input("enter a divisor for 15 : "))
-#     ans = 15 / divisor
-#     print(f"15 divided by {divisor} is {ans}")
-# except SyntaxError:
-#     print("check syntax")
-# except ZeroDivisionError:
-#     print("cannot divide by zero")
+# ##
+# """counting the number of words in book - Survivors by Arthur Savege"""
+# # Here this function is kept in a module
+# def count_words(filename):
+# """This function counts numbers of words in a file passed to it"""
+#     try:
+#         with open(filename) as x:
+#             contents = x.read()
+#     except FileNotFoundError:
+#         print("Sorry, there no such file")
+
+#     list_of_words = contents.split()
+#     num_of_words = len(list_of_words)
+#     print(f"Words in Survivors book - {num_of_words} words")
+
+## Main code
+# from filemodules.wordcounter import count_words
+
+# filename = "txt_files/survivors-by-arthur-savage.txt"
+# count_words(filename)
+
+# O/P
+# Words in Survivors book - 3851 words
 ############################################################
 ##
-##
-print("Division Code\n") 
-print("give me 2 nos. I wil divide them. (to quit press q)")
+## Counting words from multiple files
+# """This code will total count words in multiple files.""" 
 
-while True:
-    num1 = input("input a number: ")
-    if num1 == 'q':
-        break
-    num2 = input("input another number: ")
-    if num2 == 'q':
-        break
-    try:
-        ans = int(num1) / int(num2)
-    except ArithmeticError:
-        print("cant divide by zero\n")
-    else:
-        print(f"{num1} / {num2} = {ans}\n")
+# ## storing file names in a list
+# from filemodules.wordcounter import count_words
+
+# book_list = ["txt_files/learning_python.txt", "txt_files/asd.txt", "txt_files/program2.txt", "txt_files/survivors-by-arthur-savage.txt"]
+
+# for book in book_list:
+#     count_words(book)
+
+# O/P
+# Words in Survivors book - 48 words
+# Sorry, there no such file
+# Words in Survivors book - 19 words
+# Words in Survivors book - 3851 words
+############################################################
+##
+## JSON module - used to store data in file for future use
+# import json
+
+# file1 = "txt_and_json_files/json1.json"
+
+# try: 
+#     with open(file1) as f:
+#         data = json.load(f)
+# except FileNotFoundError:
+#     name = input("Enter name ")
+#     location = input("Enter location ")
+
+#     data = {"name": name, "place": location}
+#     with open(file1, 'w') as f:
+#         json.dump(data, f) 
+#     print("We will remember when u come back")
+# else:
+#     print(f"Welcome back, you had stored the following data\n{data}")
+
+
+# # O/P
+# # > python3 working_with_file.py 
+# # Enter name Sam
+# # Enter location China
+# # We will remember when u come back
+
+# # > python3 working_with_file.py 
+# # Welcome back, you had stored the following data
+# # {'name': 'Sam', 'place': 'China'}
+############################################################
+##
+## REFACTORING above code
+# from filemodules.users import CreateUser, GreetUser
+
+# def main():
+#     filename = "txt_and_json_files/json1.json"
+    
+#     obj1 = GreetUser(filename)
+#     name = obj1.greet_existing_user()
+
+#     if name:
+#         print(f"Welcome back {name}")
+#     else:
+#         obj2 = CreateUser(filename)
+#         name = obj2.new_user()
+#         print(f"We will remember u {name} when u come back!")
+
+# main()
+#############################################
+# users module:
+# import json
+
+# class CreateUser:
+#     def __init__(self,filename):
+#         self.filename = filename
+
+#     def new_user(self):
+#         name = input("Enter name : ")
+#         with open(self.filename, 'w') as f:
+#             json.dump(name,f)
+#         return name
+
+
+# class GreetUser:
+#     def __init__(self, filename):
+#         self.filename = filename
+
+#     def greet_existing_user(self):
+#         try:
+#             with open(self.filename) as f:
+#                 name = json.load(f)
+#         except FileNotFoundError:
+#             return None
+#         else:
+#             return name
+#########################################################
+
+
+
+
+
+
+
+
+
 
 
 
