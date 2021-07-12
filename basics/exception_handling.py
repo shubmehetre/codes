@@ -11,29 +11,29 @@
 ############################################################
 ##
 # ##
-# """division of 2 numbers. Error handling practice"""
-# print("Division Code\n")
-# print("give me 2 nos. I wil divide them. (to quit press q)")
+"""division of 2 numbers. Error handling practice"""
+print("Division Code\n")
+print("give me 2 nos. I wil divide them. (to quit press q)")
 
-# while True:
-#     num1 = input("input a number: ")
-#     if num1 == 'q':
-#         break
+while True:
+    num1 = input("input a number: ")
+    if num1 == 'q':
+        break
 
-#     num2 = input("input a number: ")
-#     if num2 == 'q':
-#         break
+    num2 = input("input a number: ")
+    if num2 == 'q':
+        break
 
-#     try: 
-#         ans = int(num1) / int(num2)
-#     except ZeroDivisionError:
-#         print("Cant divide by zero\n")
-#     except ArithmeticError:
-#         print("pls check you input\n")
-#     except ValueError:
-#         print("Kindly input numerical values\n")
+    try: 
+        ans = int(num1) / int(num2)
+    except ZeroDivisionError:
+        print("Cant divide by zero\n")
+    except ArithmeticError:
+        print("pls check you input\n")
+    except ValueError:
+        print("Kindly input numerical values\n")
 
-#     else:
-#             print(f"{num1} / {num2} = {ans}\n")
+    else:
+            print(f"{num1} / {num2} = {ans}\n")
 ############################################################
 ##
