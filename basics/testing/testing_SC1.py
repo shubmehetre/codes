@@ -1,6 +1,5 @@
-from typing import Any
 import unittest
-from sample_code1 import divide_two_nos
+import sample_code1
 
 class DivideNosTestcase(unittest.TestCase):
     """testing sample_code1.py - division of 2 nos"""
@@ -9,12 +8,16 @@ class DivideNosTestcase(unittest.TestCase):
     #     super().__init__(methodName=methodName)
 
     def test_normal_nos(self):
-        ans = divide_two_nos(10,5)
+        ans = sample_code1.divide_two_nos(10,5)
         self.assertEqual(ans, 2.0)
     
     def test_alphabets(self):
-        ans = divide_two_nos('[A-Za-b]','[A-Za-b]')
-        self.assertEqual(ans, Any,msg="go home")
+        ans = sample_code1.divide_two_nos(100, 50)
+        self.assertEqual(ans, 2.0)
+
+    # def test_divide_by_zero(self):
+    #     ZeroDivisionError = sample_code1.divide_two_nos(10,0)
+    #     self.assertRaises(ZeroDivisionError, sample_code1.exception_handler() )
 
 if __name__ == "__main__":
     unittest.main()

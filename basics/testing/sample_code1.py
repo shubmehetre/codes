@@ -1,3 +1,5 @@
+
+
 def divide_two_nos(num1, num2):
     """division of 2 numbers. Error handling practice"""
     while True:
@@ -12,11 +14,13 @@ def divide_two_nos(num1, num2):
         try:
             ans = int(num1) / int(num2)
         except ZeroDivisionError:
-            print("Cant divide by zero\n")
+            pass
         except ArithmeticError:
-            print("pls check you input\n")
+            pass
         except ValueError:
-            print("Kindly input numerical values\n")
+            pass
 
         else:
                 return ans
+def exception_handler():
+    pass
