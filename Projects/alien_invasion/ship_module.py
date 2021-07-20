@@ -1,4 +1,5 @@
 import pygame as py
+
 import game_settings as gs
 
 class Ship:
@@ -33,9 +34,11 @@ class Ship:
         self.moving_left = False
 
         # creating settings module object
-        self.settings = gs.Settings()
+        # self.settings = gs.Settings()
+        self.settings = ai_game.settings
 
         # converting ships horizontal position value into decimal
+        # rect has x() for x axis y() for y axis
         self.x = float(self.rect.x)
 
     def update(self):
@@ -44,13 +47,14 @@ class Ship:
         This method will be called infinitely in run_game()
         """
 
-        # 'if True' runs only once
-        # 'while True' runs infinitely
-        if self.moving_right:
+        # 'if True' runs only once , 'while True' runs infinitely
+        # rect.right < screen_rect.right prevents 
+        # ship from going out of the screen
+        if self.moving_right and self.rect.right < self.screen_rect.right:
             # self.rect.x += 1
             self.x += self.settings.speed
 
-        if self.moving_left:
+        if self.moving_left and self.rect.left > self.screen_rect.left:
             self.x -= self.settings.speed
 
         # this will still assign integer part of number
