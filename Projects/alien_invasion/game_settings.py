@@ -20,12 +20,12 @@ class Settings:
         self.icon = pygame.image.load('images/ufo2.png') 
 
         # ship speed
-        self.speed = 0.35
+        self.ship_speed = 0.35
 
         # bullet settings
-        self.bullet_height = 10
-        self.bullet_width = 3
-        self.bullet_speed = 1.0
+        self.bullet_height = 12
+        self.bullet_width = 5
+        self.bullet_speed = 0.7
         self.bullet_color = (60,60,60)
-
+        self.bullet_allowed = 2
         
