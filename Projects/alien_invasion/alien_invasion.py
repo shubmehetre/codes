@@ -8,6 +8,8 @@ import ship_module
 
 import bullet_module
 
+import alien_module
+
 class AlienInvasion:
     """
     Class to manage game assets and behavior 
@@ -43,6 +45,13 @@ class AlienInvasion:
         self.bullets_group = pygame.sprite.Group()
         # sprit.Group is a list of all the sprites that are created by bullet_module instance and 
         # added to this group using self.bullet_group.add(bullet instance)
+
+        # alien module 
+        self.aliens_group = pygame.sprite.Group()
+        # create fleet
+        self._create_fleet()
+
+
 
     def run_game(self):
         """
@@ -101,24 +110,48 @@ class AlienInvasion:
         # limiting number of bullets created at a time on screen
         if len(self.bullets_group) < self.settings.bullet_allowed:
             self.new_bullet = bullet_module.Bullet(self)
-            self.bullets_group.add(self.new_bullet)
+            self.bullets_group.add(self.new_bullet) 
 
-    def _update_screen(self):
+    
+    def _create_fleet(self):
+        """creates fleet of aliens"""
 
-            # window's background color
-            self.screen.fill(self.settings.bg_color)
+        # object create to do calculations and not draw
+        alien = alien_module.Alien(self)
+        # rect.size returns a tuple (width, height)
+        alien_width, alien_height = alien.rect.size
 
-            # blit(blit on screen) the ship on screen
-            self.ship.blitme()
+        # calcualting horizontal space for aliens
+        avail_space_x  = self.settings.screen_width - (2 * alien.rect.width)
+        num_x = avail_space_x // (1.5 * alien.rect.width)
+        number_aliens_x = int(num_x)
 
-            # we store all bullets created by hitting space bar in the bullets_group
-            # then we draw bullet if any there in the bullet group created
-            for bullet in self.bullets_group.sprites():
-                bullet.draw_bullet()
+        # calculating vertical space
+        ship_height = self.ship.rect.height
 
-            # make most recently drawn screen visible
-            # continually updates display to show new positions of objects
-            pygame.display.flip()
+        avail_space_y = (self.settings.screen_height - 
+                            (3 * alien_height) - ship_height)
+        number_rows = avail_space_y // (2 * alien_height)
+
+        # creating full fleet
+        for row_number in range(number_rows):
+            for alien_number in range(number_aliens_x):
+                self._create_alien(alien_number, row_number)
+
+    def _create_alien(self, alien_number, row_number):
+        """creating alien using obj, and placing it in row using object's x attribute"""
+        
+        # object create to do calculations and not draw
+        alien = alien_module.Alien(self)
+        # rect.size returns a tuple (width, height)
+        alien_width, alien_height = alien.rect.size
+        
+        alien.x = alien.rect.width + 2 * alien.rect.width * alien_number
+        
+        alien.rect.x = alien.x
+        alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
+
+        self.aliens_group.add(alien)
 
     def _update_bullets(self):
         """all the bullet update related code"""
@@ -139,6 +172,33 @@ class AlienInvasion:
             if bullet.rect.bottom < 0:
                 self.bullets_group.remove(bullet)
         # print(len(self.bullets_group)) # check in terminal if bullets are getting deleted
+
+
+
+    def _update_screen(self):
+
+            # window's background color
+            self.screen.fill(self.settings.bg_color)
+
+            # blit(blit on screen) the ship on screen
+            self.ship.blitme()
+
+            # blit alien
+            # self.alien.blitme()
+
+            # we store all bullets created by hitting space bar in the bullets_group
+            # then we draw bullet if any there in the bullet group created
+            for bullet in self.bullets_group.sprites():
+                bullet.draw_bullet()
+
+            # drawing the alien via the group
+            self.aliens_group.draw(self.screen)
+
+            # make most recently drawn screen visible
+            # continually updates display to show new positions of objects
+            pygame.display.flip()
+            # keep this at last to update everything above
+
 
 if __name__ == "__main__":
 
