@@ -10,6 +10,10 @@ import bullet_module
 
 import alien_module
 
+import stats_module
+
+import time
+
 class AlienInvasion:
     """
     Class to manage game assets and behavior 
@@ -48,9 +52,11 @@ class AlienInvasion:
 
         # alien module 
         self.aliens_group = pygame.sprite.Group()
-        # create fleet
+        # create fleet at start of game itself
         self._create_fleet()
 
+        # statistics module init
+        self.stats = stats_module.Stats(self)
 
 
     def run_game(self):
@@ -66,8 +72,11 @@ class AlienInvasion:
             # update ships position according to right/left keypresses
             self.ship.update()
 
-            # update bullet 
+            # update bullet's position
             self._update_bullets()
+
+            # update aliens movement
+            self._update_aliens()
 
             # helper method to update screen
             self._update_screen()
@@ -122,8 +131,8 @@ class AlienInvasion:
         alien_width, alien_height = alien.rect.size
 
         # calcualting horizontal space for aliens
-        avail_space_x  = self.settings.screen_width - (2 * alien.rect.width)
-        num_x = avail_space_x // (1.5 * alien.rect.width)
+        avail_space_x  = self.settings.screen_width - (2 * alien_width)
+        num_x = avail_space_x // (2 * alien.rect.width)
         number_aliens_x = int(num_x)
 
         # calculating vertical space
@@ -145,13 +154,69 @@ class AlienInvasion:
         alien = alien_module.Alien(self)
         # rect.size returns a tuple (width, height)
         alien_width, alien_height = alien.rect.size
-        
-        alien.x = alien.rect.width + 2 * alien.rect.width * alien_number
-        
-        alien.rect.x = alien.x
-        alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
 
+        # setting the x,y cordinates of the every new alien created 
+        # in the _create_fleet nested for loop        
+        alien.x = (alien_width / 2) + 2 * alien_width * alien_number
+        alien.rect.x = int(alien.x)
+        alien.y = 1.5 * alien_height * row_number
+        alien.rect.y = int(alien.y)
+
+        # add the alien with their x,y axis set, to the alien sprite group
         self.aliens_group.add(alien)
+
+    def _update_aliens(self):
+        """manage movement of aliens"""
+
+        # checks if alien fleet hits edges. 
+        # it inherently calls fleet's direction changing method
+        self._check_fleet_edges()
+
+        # method to check if bullet hit alien
+        self._check_bullet_alien_collision()
+
+        # method to chekc if alien and ship collide
+        # self._check_alien_ship_collision()
+
+        if pygame.sprite.spritecollideany(self.ship, self.aliens_group):
+            self.aliens_group.empty()
+            self.bullets_group.empty()
+            self.ship
+            self._create_fleet()
+        # call the update() from alien module
+        self.aliens_group.update()
+
+    def _check_fleet_edges(self):
+        """check if the alien hits edge"""
+        for alien in self.aliens_group.sprites():
+            if alien.check_edges():            
+                self._change_fleet_direction()
+                break
+
+    def _change_fleet_direction(self):
+        """drops the fleet and changes direction"""
+
+        for alien in self.aliens_group.sprites():
+            alien.rect.y += self.settings.alien_drop_speed
+        self.settings.alien_direction *= -1
+
+
+    def _check_bullet_alien_collision(self):
+        """
+        checks for collision of bullets and aliens
+        also repopulates fleet
+        """
+
+        # this will return a dictionary of all collisions that happen
+        collisions = pygame.sprite.groupcollide(self.bullets_group, self.aliens_group, True, True)
+        # this is not of much use, but we can use it to keep score
+
+        # repopulate aliens fleet 
+        # checking if aliens groups is empty
+        if not self.aliens_group:
+            # empting bullets group before creating new fleet
+            self.bullets_group.empty()
+            self._create_fleet()
 
     def _update_bullets(self):
         """all the bullet update related code"""
@@ -173,7 +238,8 @@ class AlienInvasion:
                 self.bullets_group.remove(bullet)
         # print(len(self.bullets_group)) # check in terminal if bullets are getting deleted
 
-
+    # def _ship_hit(self):
+        
 
     def _update_screen(self):
 
