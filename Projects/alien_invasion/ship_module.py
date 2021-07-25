@@ -66,6 +66,7 @@ class Ship:
         # this will still assign integer part of number
         # but 1.6 + 1.6 ~ 3 is better than 2 + 2 = 4
         self.rect.x = self.x
+        # self.rect.x 's value is depended on self.x
 
     def blitme(self):
         """
@@ -73,5 +74,14 @@ class Ship:
         """
 
         self.screen.blit(self.image, self.rect)
+    
+    def center_ship(self):
+                
+        # setting the Ship's rect's starting position
+        self.rect.midbottom = self.screen_rect.midbottom
 
-
+        # as we are using self.x for actual blitting of ship, 
+        # we set the new position to that variable
+        self.x = float(self.rect.x)
+        # if we dont use this line, the ship wont recentre for new fleet.
+        # coz the ship.update method is assigning self.x value to self.ship.x

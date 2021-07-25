@@ -21,7 +21,7 @@ class Settings:
 
         # ship settings
         self.ship_speed = 1.2
-        self.ship_limit = 3
+        self.ship_limit = 1
 
         # bullet settings
         self.bullet_height = 12
@@ -32,6 +32,12 @@ class Settings:
 
         # Alien settings
         self.alien_speed = 0.6
-        self.alien_drop_speed = 30
+        self.alien_drop_speed = 30  
         self.alien_direction = 1
+
+        # button settings
+        self.button_color = (50, 40, 100)
+        self.button_width = 100
+        self.button_height = 60
+        self.text_color = (255,255,255)
         

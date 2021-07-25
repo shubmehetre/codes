@@ -10,9 +10,12 @@ class Stats:
         # auto method called to reset stats
         self.reset_stats()
 
+        # flag to keep game running
+        self.game_running = False
 
+        
     def reset_stats(self):
         """initialize stats that change during game"""
 
-        self.ship_left = game_settings.Settings.ship_limit
+        self.ship_left = self.settings.ship_limit
 

@@ -14,6 +14,8 @@ import stats_module
 
 import time
 
+import button_module
+
 class AlienInvasion:
     """
     Class to manage game assets and behavior 
@@ -56,7 +58,11 @@ class AlienInvasion:
         self._create_fleet()
 
         # statistics module init
-        self.stats = stats_module.Stats(self)
+        self.stats = stats_module.Stats()
+
+        # creating button at start
+        self.play_button = button_module.Button(self, 'Play!')
+
 
 
     def run_game(self):
@@ -69,18 +75,19 @@ class AlienInvasion:
             # helper method to check for events
             self._check_events()
 
-            # update ships position according to right/left keypresses
-            self.ship.update()
+            if self.stats.game_running:
+                # update ships position according to right/left keypresses
+                self.ship.update()
 
-            # update bullet's position
-            self._update_bullets()
+                # update bullet's position
+                self._update_bullets()
 
-            # update aliens movement
-            self._update_aliens()
+                # update aliens movement
+                self._update_aliens()
 
             # helper method to update screen
             self._update_screen()
-
+        
 
     def _check_events(self)    :
             # watch keyboard and mouse events
@@ -92,6 +99,10 @@ class AlienInvasion:
 
             elif event.type == pygame.KEYUP:
                 self._key_up_events(event)
+
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = pygame.mouse.get_pos()
+                self._check_play_button_click(mouse_pos)
     
     def _key_down_events(self, event):
         
@@ -113,6 +124,7 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
 
+
     def _fire_bullet(self):
         """create bullet and pass it to sprite.Group"""
 
@@ -121,7 +133,27 @@ class AlienInvasion:
             self.new_bullet = bullet_module.Bullet(self)
             self.bullets_group.add(self.new_bullet) 
 
-    
+    def _update_bullets(self):
+        """all the bullet update related code"""
+
+        # update bullet's position
+        # using the group object we access the bullet objects method like update
+        self.bullets_group.update()
+        # bullet_group has all the bullet objects in it as a list
+        # so we are calling each bullet object with its update method
+        # once bullet is drawn, this method continuosly updates its y-axis 
+        # according to the speed value then as the screen is constantly updated, 
+        # the  bullet appears to move in y-axis
+
+        # delete the bullets from group that have left the screen. but still exist
+        # NEVER delete elements while iterating a list == >https://www.quora.com/In-Python-why-cant-you-remove-elements-from-a-list-with-a-for-loop-but-you-can-with-a-while-loop?share=1
+        # AND ==> https://stackoverflow.com/questions/6022764/python-removing-list-element-while-iterating-over-list
+        for bullet in self.bullets_group.copy():
+            if bullet.rect.bottom < 0:
+                self.bullets_group.remove(bullet)
+        # print(len(self.bullets_group)) # check in terminal if bullets are getting deleted
+
+
     def _create_fleet(self):
         """creates fleet of aliens"""
 
@@ -165,6 +197,8 @@ class AlienInvasion:
         # add the alien with their x,y axis set, to the alien sprite group
         self.aliens_group.add(alien)
 
+        # the _update_screen actually draws the alien once we set its x,y cordinates
+
     def _update_aliens(self):
         """manage movement of aliens"""
 
@@ -176,13 +210,12 @@ class AlienInvasion:
         self._check_bullet_alien_collision()
 
         # method to chekc if alien and ship collide
-        # self._check_alien_ship_collision()
+        self._check_alien_ship_collision()
 
-        if pygame.sprite.spritecollideany(self.ship, self.aliens_group):
-            self.aliens_group.empty()
-            self.bullets_group.empty()
-            self.ship
-            self._create_fleet()
+        # method to check if alien reach bottom
+        self._check_alien_bottom_collision()
+
+        
         # call the update() from alien module
         self.aliens_group.update()
 
@@ -192,14 +225,6 @@ class AlienInvasion:
             if alien.check_edges():            
                 self._change_fleet_direction()
                 break
-
-    def _change_fleet_direction(self):
-        """drops the fleet and changes direction"""
-
-        for alien in self.aliens_group.sprites():
-            alien.rect.y += self.settings.alien_drop_speed
-        self.settings.alien_direction *= -1
-
 
     def _check_bullet_alien_collision(self):
         """
@@ -218,28 +243,55 @@ class AlienInvasion:
             self.bullets_group.empty()
             self._create_fleet()
 
-    def _update_bullets(self):
-        """all the bullet update related code"""
+    def _check_alien_ship_collision(self):
+        """TODOs if aliens hit ship/bottom"""
 
-        # update bullet's position
-        # using the group object we access the bullet objects method like update
-        self.bullets_group.update()
-        # bullet_group has all the bullet objects in it as a list
-        # so we are calling each bullet object with its update method
-        # once bullet is drawn, this method continuosly updates its y-axis 
-        # according to the speed value then as the screen is constantly updated, 
-        # the  bullet appears to move in y-axis
+        # call _ship_hit if alien hit ship/bottom
+        if pygame.sprite.spritecollideany(self.ship, self.aliens_group):
+            self._alien_hit_ship()
 
-        # delete the bullets from group that have left the screen. but still exist
-        # NEVER delete elements while iterating a list == >https://www.quora.com/In-Python-why-cant-you-remove-elements-from-a-list-with-a-for-loop-but-you-can-with-a-while-loop?share=1
-        # AND ==> https://stackoverflow.com/questions/6022764/python-removing-list-element-while-iterating-over-list
-        for bullet in self.bullets_group.copy():
-            if bullet.rect.bottom < 0:
-                self.bullets_group.remove(bullet)
-        # print(len(self.bullets_group)) # check in terminal if bullets are getting deleted
+    def _check_alien_bottom_collision(self):
+        """checks if any alien hits bottom of the screen"""
 
-    # def _ship_hit(self):
-        
+        for alien in self.aliens_group.sprites():
+            if alien.rect.bottom >= self.screen.get_rect().bottom:
+                # treat same as if ship is hit
+                self._alien_hit_ship()
+                break
+
+    def _change_fleet_direction(self):
+        """drops the fleet and changes direction"""
+
+        for alien in self.aliens_group.sprites():
+            alien.rect.y += self.settings.alien_drop_speed
+        self.settings.alien_direction *= -1
+
+    def _alien_hit_ship(self):
+        """Operations todo after aliens hit the ship or the bottom of screen"""
+
+        if self.settings.ship_limit > 0:
+            # decrement the ship remainnig count
+            self.settings.ship_limit -= 1
+
+            # clear the bullets and aliens sprite group
+            self.bullets_group.empty()
+            self.aliens_group.empty()
+
+            # create a new fleet and centre the new ship
+            self._create_fleet
+            # self.ship.rect.midbottom = self.screen.get_rect().midbottom
+            self.ship.center_ship()
+
+            # pause 
+            time.sleep(0.5)
+        else:
+            self.stats.game_running = False
+            
+    def _check_play_button_click(self, mouse_pos):
+        """checks if user clicked on play button"""
+
+        if self.play_button.rect.collidepoint(mouse_pos):
+            self.stats.game_running = True
 
     def _update_screen(self):
 
@@ -260,11 +312,15 @@ class AlienInvasion:
             # drawing the alien via the group
             self.aliens_group.draw(self.screen)
 
+            # showing button if game_running is False
+            if not self.stats.game_running:
+                self.play_button.draw_button()
+            # draw the play button at last so that its at the top of all other stuff
+
             # make most recently drawn screen visible
             # continually updates display to show new positions of objects
             pygame.display.flip()
             # keep this at last to update everything above
-
 
 if __name__ == "__main__":
 
