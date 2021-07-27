@@ -32,7 +32,7 @@ class Settings:
 
         # Alien settings
         self.alien_speed = 0.6
-        self.alien_drop_speed = 30  
+        self.alien_drop_speed = 300  
         self.alien_direction = 1
 
         # button settings

@@ -52,7 +52,7 @@ class AlienInvasion:
         # sprit.Group is a list of all the sprites that are created by bullet_module instance and 
         # added to this group using self.bullet_group.add(bullet instance)
 
-        # alien module 
+        # alien group 
         self.aliens_group = pygame.sprite.Group()
         # create fleet at start of game itself
         self._create_fleet()
@@ -109,14 +109,26 @@ class AlienInvasion:
         # until the key remains pressed down, ship.moving.right flag remains true
         # hence the ship.update() will keep moving 
         # ship's position (ship.rect.x) to right(i.e. adding ship_speed value to x attribute of ship's rect (ship.rect.x))
+        
+        # move ship right
         if event.key == pygame.K_RIGHT:
             self.ship.moving_right = True
+        
+        # move ship left
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
+        
+        # exit game
         elif event.key == pygame.K_q:
             sys.exit()
+        
+        # fire bullets
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
+
+        # start game
+        elif event.key == pygame.K_p:
+            self._start_game()
 
     def _key_up_events(self, event):
         if event.key == pygame.K_RIGHT:
@@ -285,13 +297,41 @@ class AlienInvasion:
             # pause 
             time.sleep(0.5)
         else:
+            # stop the  game
             self.stats.game_running = False
             
     def _check_play_button_click(self, mouse_pos):
         """checks if user clicked on play button"""
 
-        if self.play_button.rect.collidepoint(mouse_pos):
-            self.stats.game_running = True
+        # check if the mouse click and the play_button rect collide
+        play_button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+        
+        # if button clicked and game is not running, start the game
+        if play_button_clicked and not self.stats.game_running:
+            # start new game
+            self._start_game()            
+        
+        # when game is not running, make cursor visible again 
+        # to be able click the play button
+        elif not self.stats.game_running:
+            pygame.mouse.set_visible(True)
+
+    def _start_game(self):
+        """start the game if play button or P is presses"""
+        # reset game stats
+        self.stats.reset_stats()
+        self.stats.game_running = True
+
+        # empty the alien and bullet group
+        self.bullets_group.empty()
+        self.aliens_group.empty()
+
+        # Create new fleet and center the ship
+        self._create_fleet
+        self.ship.center_ship()
+
+        # hide mouse if game is running
+        pygame.mouse.set_visible(False)
 
     def _update_screen(self):
 

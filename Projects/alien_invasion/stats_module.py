@@ -17,5 +17,6 @@ class Stats:
     def reset_stats(self):
         """initialize stats that change during game"""
 
+        # replenishing ship's left stat when this method is called
         self.ship_left = self.settings.ship_limit
 
