@@ -20,19 +20,16 @@ class Settings:
         self.icon = pygame.image.load('images/ufo2.png') 
 
         # ship settings
-        self.ship_speed = 1.2
         self.ship_limit = 1
 
         # bullet settings
         self.bullet_height = 12
         self.bullet_width = 5
-        self.bullet_speed = 1.8
         self.bullet_color = (60,60,60)
         self.bullet_allowed = 3
 
         # Alien settings
-        self.alien_speed = 0.6
-        self.alien_drop_speed = 300  
+        self.alien_drop_speed = 30
         self.alien_direction = 1
 
         # button settings
@@ -40,4 +37,31 @@ class Settings:
         self.button_width = 100
         self.button_height = 60
         self.text_color = (255,255,255)
+
+        # Level ups
+        self.speedup_scale = 1.2
+
+        self.initialize_dynamic_settings()
+
+
+    def initialize_dynamic_settings(self):
+        """new settings for new level"""
+
+        # initial game element's speed settings
+        self.ship_speed = 1.2
+        self.bullet_speed = 1.6
+        self.alien_speed = 0.4
+
+        # points
+        self.alien_points = 10
+
+        # 1 is to right and -1 is to left
+        self.fleet_direction = 1
+
+
+    def speed_increase(self):
+        """"""
+        self.ship_speed *= self.speedup_scale
+        self.bullet_speed *= self.speedup_scale
+        self.alien_speed *= self.speedup_scale
         

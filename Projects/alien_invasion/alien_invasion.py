@@ -16,6 +16,8 @@ import time
 
 import button_module
 
+import scorecard_module
+
 class AlienInvasion:
     """
     Class to manage game assets and behavior 
@@ -59,6 +61,9 @@ class AlienInvasion:
 
         # statistics module init
         self.stats = stats_module.Stats()
+
+        # scoreboard init
+        self.sb = scorecard_module.ScoreCard(self)
 
         # creating button at start
         self.play_button = button_module.Button(self, 'Play!')
@@ -244,9 +249,14 @@ class AlienInvasion:
         also repopulates fleet
         """
 
-        # this will return a dictionary of all collisions that happen
+        # True True here will 
         collisions = pygame.sprite.groupcollide(self.bullets_group, self.aliens_group, True, True)
+        # this will return a dictionary of all collisions that happen
         # this is not of much use, but we can use it to keep score
+
+        if collisions:
+            self.stats.score += self.settings.alien_points
+            self.sb.score_image()
 
         # repopulate aliens fleet 
         # checking if aliens groups is empty
@@ -254,6 +264,7 @@ class AlienInvasion:
             # empting bullets group before creating new fleet
             self.bullets_group.empty()
             self._create_fleet()
+            self.settings.speed_increase()
 
     def _check_alien_ship_collision(self):
         """TODOs if aliens hit ship/bottom"""
@@ -309,6 +320,7 @@ class AlienInvasion:
         # if button clicked and game is not running, start the game
         if play_button_clicked and not self.stats.game_running:
             # start new game
+            self.settings.initialize_dynamic_settings()
             self._start_game()            
         
         # when game is not running, make cursor visible again 
@@ -352,7 +364,10 @@ class AlienInvasion:
             # drawing the alien via the group
             self.aliens_group.draw(self.screen)
 
-            # showing button if game_running is False
+            # draw scoreboard
+            self.sb.show_score()
+
+            # showing button if game_running is False that is game is inactive
             if not self.stats.game_running:
                 self.play_button.draw_button()
             # draw the play button at last so that its at the top of all other stuff
