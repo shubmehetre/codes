@@ -16,6 +16,7 @@ import time
 
 import button_module
 
+# from scorecard_module import ScoreCard
 import scorecard_module
 
 class AlienInvasion:
@@ -46,6 +47,8 @@ class AlienInvasion:
         pygame.display.set_caption(self.settings.caption) 
         pygame.display.set_icon(self.settings.icon)
 
+
+
         # ship module initialization
         self.ship = ship_module.Ship(self)
 
@@ -57,13 +60,14 @@ class AlienInvasion:
         # alien group 
         self.aliens_group = pygame.sprite.Group()
         # create fleet at start of game itself
-        self._create_fleet()
 
         # statistics module init
-        self.stats = stats_module.Stats()
+        self.stats = stats_module.Stats(self)
 
         # scoreboard init
         self.sb = scorecard_module.ScoreCard(self)
+        
+        self._create_fleet()
 
         # creating button at start
         self.play_button = button_module.Button(self, 'Play!')
@@ -79,17 +83,18 @@ class AlienInvasion:
             
             # helper method to check for events
             self._check_events()
-
+            
             if self.stats.game_running:
                 # update ships position according to right/left keypresses
+                
                 self.ship.update()
-
+                
                 # update bullet's position
                 self._update_bullets()
-
+                
                 # update aliens movement
                 self._update_aliens()
-
+                # 
             # helper method to update screen
             self._update_screen()
         
@@ -208,7 +213,7 @@ class AlienInvasion:
         # in the _create_fleet nested for loop        
         alien.x = (alien_width / 2) + 2 * alien_width * alien_number
         alien.rect.x = int(alien.x)
-        alien.y = 1.5 * alien_height * row_number
+        alien.y = alien.rect.height + 1.4 * alien_height * row_number
         alien.rect.y = int(alien.y)
 
         # add the alien with their x,y axis set, to the alien sprite group
@@ -222,10 +227,10 @@ class AlienInvasion:
         # checks if alien fleet hits edges. 
         # it inherently calls fleet's direction changing method
         self._check_fleet_edges()
-
+        
         # method to check if bullet hit alien
         self._check_bullet_alien_collision()
-
+        # 
         # method to chekc if alien and ship collide
         self._check_alien_ship_collision()
 
@@ -248,23 +253,31 @@ class AlienInvasion:
         checks for collision of bullets and aliens
         also repopulates fleet
         """
-
+        
         # True True here will 
-        collisions = pygame.sprite.groupcollide(self.bullets_group, self.aliens_group, True, True)
+        collisions = pygame.sprite.groupcollide(
+            self.bullets_group, self.aliens_group, True, True)
         # this will return a dictionary of all collisions that happen
         # this is not of much use, but we can use it to keep score
-
+        
+        # print(self.settings.alien_points)
         if collisions:
-            self.stats.score += self.settings.alien_points
-            self.sb.score_image()
+            for aliens in collisions.values():
+                self.stats.score += self.settings.alien_points * len(aliens)
+            self.sb.prep_score()
 
+       
         # repopulate aliens fleet 
         # checking if aliens groups is empty
+        # print((self.aliens_group))
         if not self.aliens_group:
             # empting bullets group before creating new fleet
+            print("inside not self.aliens_group")
             self.bullets_group.empty()
             self._create_fleet()
-            self.settings.speed_increase()
+            self.settings.game_speed_increase()
+            # print(self.settings.alien_points)
+            
 
     def _check_alien_ship_collision(self):
         """TODOs if aliens hit ship/bottom"""
@@ -287,7 +300,7 @@ class AlienInvasion:
 
         for alien in self.aliens_group.sprites():
             alien.rect.y += self.settings.alien_drop_speed
-        self.settings.alien_direction *= -1
+        self.settings.fleet_direction *= -1
 
     def _alien_hit_ship(self):
         """Operations todo after aliens hit the ship or the bottom of screen"""
@@ -301,7 +314,7 @@ class AlienInvasion:
             self.aliens_group.empty()
 
             # create a new fleet and centre the new ship
-            self._create_fleet
+            self._create_fleet()
             # self.ship.rect.midbottom = self.screen.get_rect().midbottom
             self.ship.center_ship()
 
@@ -321,7 +334,7 @@ class AlienInvasion:
         if play_button_clicked and not self.stats.game_running:
             # start new game
             self.settings.initialize_dynamic_settings()
-            self._start_game()            
+            self._start_game() 
         
         # when game is not running, make cursor visible again 
         # to be able click the play button
@@ -334,12 +347,15 @@ class AlienInvasion:
         self.stats.reset_stats()
         self.stats.game_running = True
 
+        # reset score
+        self.sb.prep_score()
+
         # empty the alien and bullet group
         self.bullets_group.empty()
         self.aliens_group.empty()
 
         # Create new fleet and center the ship
-        self._create_fleet
+        self._create_fleet()
         self.ship.center_ship()
 
         # hide mouse if game is running

@@ -16,7 +16,6 @@ class Stats:
         # score
         # self.score = 0
 
-
         
     def reset_stats(self):
         """initialize stats that change during game"""
@@ -27,4 +26,5 @@ class Stats:
         # reset score
         self.score = 0
 
+        
 

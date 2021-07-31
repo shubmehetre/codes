@@ -27,19 +27,19 @@ class Alien(Sprite):
         self.rect = self.image.get_rect()
 
         # setting initial position of one alien
-        self.rect.x = self.rect.width / 2 
-        self.rect.y = self.rect.height / 2
+        self.rect.x = self.rect.width  
+        self.rect.y = self.rect.height 
 
         # storing exact horizonal position of alien we take 
         # the main x attribute in another varible to do calculation
-        self.x = self.rect.x
+        self.x = float(self.rect.x)
 
     
     def update(self):
         """moving the aliens"""
 
         self.x += (self.settings.alien_speed
-                    * self.settings.alien_direction)
+                    * self.settings.fleet_direction)
 
         self.rect.x = self.x
 
