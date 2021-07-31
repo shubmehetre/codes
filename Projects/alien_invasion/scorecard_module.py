@@ -32,8 +32,10 @@ class ScoreCard:
     def prep_score(self):
         """prep image of the score"""
 
+        rounded_score = round(self.stats.score, -1)
+
         # store the score from stats module in a string
-        score_str = str(self.stats.score)
+        score_str = f'{rounded_score:,}'
 
         # create an image of the score string
         self.score_image = self.font1.render(
@@ -66,6 +68,7 @@ class ScoreCard:
 
     #     self.ship_image_rect.left = self.screen_rect.left + 20
     #     self.ship_image_rect.top = 20
+
 
 
 

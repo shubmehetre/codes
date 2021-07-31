@@ -265,18 +265,14 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
-
        
         # repopulate aliens fleet 
         # checking if aliens groups is empty
-        # print((self.aliens_group))
         if not self.aliens_group:
             # empting bullets group before creating new fleet
-            print("inside not self.aliens_group")
             self.bullets_group.empty()
             self._create_fleet()
             self.settings.game_speed_increase()
-            # print(self.settings.alien_points)
             
 
     def _check_alien_ship_collision(self):
