@@ -52,12 +52,12 @@ class AlienInvasion:
         # ship module initialization
         self.ship = ship_module.Ship(self)
 
-        # Creating a group --> more abt it here https://stackoverflow.com/questions/13851051/how-to-use-sprite-groups-in-pygame
+        # Creating a empty sprite group named bullets_group --> more abt it here https://stackoverflow.com/questions/13851051/how-to-use-sprite-groups-in-pygame
         self.bullets_group = pygame.sprite.Group()
         # sprit.Group is a list of all the sprites that are created by bullet_module instance and 
         # added to this group using self.bullet_group.add(bullet instance)
 
-        # alien group 
+        # alien group same as above
         self.aliens_group = pygame.sprite.Group()
         # create fleet at start of game itself
 
@@ -265,6 +265,7 @@ class AlienInvasion:
             for aliens in collisions.values():
                 self.stats.score += self.settings.alien_points * len(aliens)
             self.sb.prep_score()
+            self.sb.check_high_score()
        
         # repopulate aliens fleet 
         # checking if aliens groups is empty
@@ -273,6 +274,10 @@ class AlienInvasion:
             self.bullets_group.empty()
             self._create_fleet()
             self.settings.game_speed_increase()
+
+            # increase level stat after clearing the fleet
+            self.stats.level += 1
+            self.sb.prep_level()
             
 
     def _check_alien_ship_collision(self):
@@ -301,9 +306,12 @@ class AlienInvasion:
     def _alien_hit_ship(self):
         """Operations todo after aliens hit the ship or the bottom of screen"""
 
-        if self.settings.ship_limit > 0:
+        if self.stats.ship_left > 0:
             # decrement the ship remainnig count
-            self.settings.ship_limit -= 1
+            self.stats.ship_left -= 1
+
+            # update ship limit sprites on screen
+            self.sb.prep_ship()
 
             # clear the bullets and aliens sprite group
             self.bullets_group.empty()
@@ -343,8 +351,19 @@ class AlienInvasion:
         self.stats.reset_stats()
         self.stats.game_running = True
 
-        # reset score
+
+        # these are called again when player starts the game
+        # or wanna play again if all ships are finished
+        # (either at the start or in the middle wen ship limit is up)
+
+        # reset score to 0
         self.sb.prep_score()
+        
+        # reset level to 1
+        self.sb.prep_level()
+
+        # reset ships remainig to 2
+        self.sb.prep_ship()
 
         # empty the alien and bullet group
         self.bullets_group.empty()

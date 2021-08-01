@@ -13,9 +13,12 @@ class Stats:
         # flag to keep game running
         self.game_running = False
 
-        # score
-        # self.score = 0
 
+        # high score (only resets if broken)
+        high_score_file = "high_score.txt"
+        
+        with open(high_score_file) as f:
+            self.high_score = f.read()
 
         
     def reset_stats(self):
@@ -26,5 +29,8 @@ class Stats:
         
         # reset score
         self.score = 0
+
+        # Level 
+        self.level = 1
 
 

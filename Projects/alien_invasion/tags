@@ -1,0 +1,55 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Alien	alien_module.py	/^class Alien(Sprite):$/;"	c
+AlienInvasion	alien_invasion.py	/^class AlienInvasion:$/;"	c
+Bullet	bullet_module.py	/^class Bullet(Sprite):$/;"	c
+Button	button_module.py	/^class Button:$/;"	c
+ScoreCard	scorecard_module.py	/^class ScoreCard:$/;"	c
+Settings	game_settings.py	/^class Settings:$/;"	c
+Ship	ship_module.py	/^class Ship:$/;"	c
+Stats	stats_module.py	/^class Stats:$/;"	c
+__init__	alien_invasion.py	/^    def __init__(self) -> None:$/;"	m	class:AlienInvasion
+__init__	alien_module.py	/^    def __init__(self, ai_game) -> None:$/;"	m	class:Alien
+__init__	bullet_module.py	/^    def __init__(self, ai_game, *groups):$/;"	m	class:Bullet
+__init__	button_module.py	/^    def __init__(self, ai_game,msg) -> None:$/;"	m	class:Button
+__init__	game_settings.py	/^    def __init__(self) -> None:$/;"	m	class:Settings
+__init__	scorecard_module.py	/^    def __init__(self, ai_game):$/;"	m	class:ScoreCard
+__init__	ship_module.py	/^    def __init__(self, ai_game) -> None:$/;"	m	class:Ship
+__init__	stats_module.py	/^    def __init__(self, ai_game) -> None:$/;"	m	class:Stats
+_alien_hit_ship	alien_invasion.py	/^    def _alien_hit_ship(self):$/;"	m	class:AlienInvasion
+_change_fleet_direction	alien_invasion.py	/^    def _change_fleet_direction(self):$/;"	m	class:AlienInvasion
+_check_alien_bottom_collision	alien_invasion.py	/^    def _check_alien_bottom_collision(self):$/;"	m	class:AlienInvasion
+_check_alien_ship_collision	alien_invasion.py	/^    def _check_alien_ship_collision(self):$/;"	m	class:AlienInvasion
+_check_bullet_alien_collision	alien_invasion.py	/^    def _check_bullet_alien_collision(self):$/;"	m	class:AlienInvasion
+_check_events	alien_invasion.py	/^    def _check_events(self)    :$/;"	m	class:AlienInvasion
+_check_fleet_edges	alien_invasion.py	/^    def _check_fleet_edges(self):$/;"	m	class:AlienInvasion
+_check_play_button_click	alien_invasion.py	/^    def _check_play_button_click(self, mouse_pos):$/;"	m	class:AlienInvasion
+_create_alien	alien_invasion.py	/^    def _create_alien(self, alien_number, row_number):$/;"	m	class:AlienInvasion
+_create_fleet	alien_invasion.py	/^    def _create_fleet(self):$/;"	m	class:AlienInvasion
+_fire_bullet	alien_invasion.py	/^    def _fire_bullet(self):$/;"	m	class:AlienInvasion
+_key_down_events	alien_invasion.py	/^    def _key_down_events(self, event):$/;"	m	class:AlienInvasion
+_key_up_events	alien_invasion.py	/^    def _key_up_events(self, event):$/;"	m	class:AlienInvasion
+_prep_msg	button_module.py	/^    def _prep_msg(self, msg):$/;"	m	class:Button
+_start_game	alien_invasion.py	/^    def _start_game(self):$/;"	m	class:AlienInvasion
+_update_aliens	alien_invasion.py	/^    def _update_aliens(self):$/;"	m	class:AlienInvasion
+_update_bullets	alien_invasion.py	/^    def _update_bullets(self):$/;"	m	class:AlienInvasion
+_update_screen	alien_invasion.py	/^    def _update_screen(self):$/;"	m	class:AlienInvasion
+ai	alien_invasion.py	/^    ai = AlienInvasion()$/;"	v
+blitme	ship_module.py	/^    def blitme(self):$/;"	m	class:Ship
+center_ship	ship_module.py	/^    def center_ship(self):$/;"	m	class:Ship
+check_edges	alien_module.py	/^    def check_edges(self):$/;"	m	class:Alien
+draw_bullet	bullet_module.py	/^    def draw_bullet(self):$/;"	m	class:Bullet
+draw_button	button_module.py	/^    def draw_button(self):$/;"	m	class:Button
+game_speed_increase	game_settings.py	/^    def game_speed_increase(self):$/;"	m	class:Settings
+initialize_dynamic_settings	game_settings.py	/^    def initialize_dynamic_settings(self):$/;"	m	class:Settings
+prep_score	scorecard_module.py	/^    def prep_score(self):$/;"	m	class:ScoreCard
+reset_stats	stats_module.py	/^    def reset_stats(self):$/;"	m	class:Stats
+run_game	alien_invasion.py	/^    def run_game(self):$/;"	m	class:AlienInvasion
+show_score	scorecard_module.py	/^    def show_score(self):$/;"	m	class:ScoreCard
+update	alien_module.py	/^    def update(self):$/;"	m	class:Alien
+update	bullet_module.py	/^    def update(self):$/;"	m	class:Bullet
+update	ship_module.py	/^    def update(self):$/;"	m	class:Ship

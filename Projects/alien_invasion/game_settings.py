@@ -20,7 +20,7 @@ class Settings:
         self.icon = pygame.image.load('images/ufo2.png') 
 
         # ship settings
-        self.ship_limit = 1
+        self.ship_limit = 2
 
         # bullet settings
         self.bullet_height = 12
