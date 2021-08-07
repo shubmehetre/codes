@@ -11,14 +11,22 @@ class Visualize:
         """main function"""
 
         # some data set 
-        values = [1,2,3,4,5,6]
-        squares = [1,4,9,16,25,36]
+        x_values = range(1, 1001)
+        squares = [x**2 for x in x_values]
+
+        # use styles pre-defined inside matplotlib.pyplot.style
+        plt.style.use('seaborn')
 
         # fig - entire figure. ax - single plot
         fig, ax = plt.subplots()
 
-        # creating a simple line graph
-        ax.plot(values, squares, linewidth=3)
+        # scatter() - plot points 
+
+        ax.scatter(x_values,squares,c=squares,cmap=plt.cm.Blues, s=10)
+                
+
+        # plot - creates a line graph
+        ax.plot(x_values, squares, linewidth=1)
 
         # set viewer title and label axes
         ax.set_title("Random shit", fontsize=20)
