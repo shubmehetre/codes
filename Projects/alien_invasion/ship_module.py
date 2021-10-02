@@ -16,13 +16,13 @@ class Ship(Sprite):
         initialize the ship and set starting position
         """
 
-        # init Sprite 
+        # init Sprite
         super().__init__()
-        
+
         # returns screen surface
         self.screen = ai_game.screen
 
-        # we get the main screen rect here to set position of ship 
+        # we get the main screen rect here to set position of ship
         # and also to tell ship not to go beyond the main screen
         self.screen_rect = ai_game.screen.get_rect()
 
@@ -33,7 +33,7 @@ class Ship(Sprite):
         # now we create a rect of size of image
         # access the returned surface's rect value using get_rect
         self.rect = self.image.get_rect()
-        
+
         # setting the Ship's rect's starting position
         self.rect.midbottom = self.screen_rect.midbottom
 
@@ -59,7 +59,7 @@ class Ship(Sprite):
         """
 
         # 'if True' runs only once , 'while True' runs infinitely
-        # rect.right < screen_rect.right prevents 
+        # rect.right < screen_rect.right prevents
         # ship from going out of the screen
         if self.moving_right and self.rect.right < self.screen_rect.right:
             # self.rect.x += 1
@@ -79,13 +79,13 @@ class Ship(Sprite):
         """
 
         self.screen.blit(self.image, self.rect)
-    
+
     def center_ship(self):
-                
+
         # setting the Ship's rect's starting position
         self.rect.midbottom = self.screen_rect.midbottom
 
-        # as we are using self.x for actual blitting of ship, 
+        # as we are using self.x for actual blitting of ship,
         # we set the new position to that variable
         self.x = float(self.rect.x)
         # if we dont use this line, the ship wont recentre for new fleet.

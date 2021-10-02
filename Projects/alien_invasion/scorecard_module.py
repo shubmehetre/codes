@@ -17,8 +17,8 @@ class ScoreCard:
 
         # WRONG WAY
         # self.settings = game_settings.Settings()
-        
-        # RIGHT WAY to get the settings 
+
+        # RIGHT WAY to get the settings
         self.settings = ai_game.settings
 
         # stats module to get the score stat
@@ -42,7 +42,7 @@ class ScoreCard:
         # self.prep_ship()
         self.prep_ship()
 
-    
+
     def prep_score(self):
         """prep image of the score"""
 
@@ -59,7 +59,7 @@ class ScoreCard:
 
         # create/get rect of the image
         self.score_rect = self.score_image.get_rect()
-        
+
         # setting position
         self.score_rect.right = self.screen_rect.right - 20
         self.score_rect.top = 20
@@ -108,14 +108,14 @@ class ScoreCard:
 
         # prepping ship's positions and adding them to the above ship's sprite group
         for ship_number in range(self.stats.ship_left):
-            
-            # create a ship sprite. i.e. creating ship using ship class using game instance(ai_game) 
-            # as ship class's init takes 2 args (self, ai_game) 
-            # so we set self.ai_game = ai_game in init of scorecard to we can use it here
-            ship = ship_module.Ship(self.ai_game)
 
-            # settings x axis value. eg. ship 1st will take position => 10 + (1*ship.rect.width) 
-            # then 2nd ship will take position => 10 + (2*ship.rect.width) 
+            # create a ship sprite. i.e. creating ship using ship class using game instance(ai_game)
+            # as ship class's init takes 2 args (self, ai_game)
+            # so we set self.ai_game = ai_game in init of scorecard to we can use it here
+            ship = ship_module.Shippp(self.ai_game)
+
+            # settings x axis value. eg. ship 1st will take position => 10 + (1*ship.rect.width)
+            # then 2nd ship will take position => 10 + (2*ship.rect.width)
             ship.rect.x = 10 + (ship_number * ship.rect.width)
             ship.rect.y = 10
 
@@ -147,5 +147,3 @@ class ScoreCard:
         self.screen.blit(self.high_score_image, self.high_score_image_rect)
         self.screen.blit(self.level_image, self.level_image_rect)
         self.ship_group.draw(self.screen)
-
-    

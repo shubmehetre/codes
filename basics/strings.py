@@ -10,10 +10,10 @@
 # print(f'splicing 1 : {str1[1:6:2]}')
 # print(f'splicing 2 : {str1[1::2]}')
 
-# # 
+# #
 # print(str1.__len__())
 
-# # some string functions 
+# # some string functions
 # print(f'index function : {str2.index(" ")}')
 # print(f'title function : {str1.title()}')
 # print(f'strip + title function : {str1.strip().title()}')
@@ -42,7 +42,7 @@
 # print(f'"{quote}"\n\t\t\t --{author_name}')
 # ############################################################################################################################################
 
-# # more stripping 
+# # more stripping
 # another_name = "\tshubham mehetre      "
 # print(another_name)
 # print(f'now stripping spaces : {another_name.strip()}')
@@ -56,3 +56,7 @@
 
 # for i in full_name.split(" "):
 #     print(i)
+# ############################################################################################################################################
+str1 = "Shubham"
+
+print(str1.upper())
