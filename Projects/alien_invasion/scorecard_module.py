@@ -112,7 +112,7 @@ class ScoreCard:
             # create a ship sprite. i.e. creating ship using ship class using game instance(ai_game)
             # as ship class's init takes 2 args (self, ai_game)
             # so we set self.ai_game = ai_game in init of scorecard to we can use it here
-            ship = ship_module.Shippp(self.ai_game)
+            ship = ship_module.Ship(self.ai_game)
 
             # settings x axis value. eg. ship 1st will take position => 10 + (1*ship.rect.width)
             # then 2nd ship will take position => 10 + (2*ship.rect.width)
