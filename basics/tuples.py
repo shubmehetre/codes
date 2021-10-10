@@ -1,9 +1,6 @@
-from typing import NewType
-
-
 tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 
-# ## indexing in tuples
+## indexing in tuples
 
 # print(tuple1[1:])
 ## O/P
@@ -38,7 +35,7 @@ tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 # 4
 # 2
 ##########################################################################################
-## 
+##
 # Tuple unpacking
 # name_list = ("sam", "baxter")
 
@@ -64,29 +61,7 @@ tuple1 = ("apple","banana", "kiwi", "jackfruit", "grapes")
 # O/P
 # 1
 # [2, 3, 4, 5, 6, 7, 8]
-# 9 
+# 9
 
 ###########################################################################################
 ##
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

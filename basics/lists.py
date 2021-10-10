@@ -214,7 +214,7 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 #         print (x.title() + ", is a great magician!!")
 
 # new_magicians = []
-# magicians = ['merlin', 'blaine', 'agaybi', 'copperfield']   
+# magicians = ['merlin', 'blaine', 'agaybi', 'copperfield']
 
 # show_magicians(magicians)
 # print()
@@ -223,4 +223,18 @@ sample_names = ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3',[
 
 # print(magicians)
 # print(new_magicians)
-#  
+#
+
+#############################################################################33
+
+# list1 = list(range(1,50,2))
+#
+# print("List1 is a list of odd nos between 1-50.")
+# to_find = int(input("Enter any number to find its index:  "))
+#
+# print(f"index is : {list1.index(to_find)}")
+
+###################################33
+# print a list of squared nos for numbers in range 1 to 5
+print([ nums**2 for nums in range(1,5) ])
+# this is stupid easy xD
