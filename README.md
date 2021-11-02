@@ -1,5 +1,3 @@
-# Get Set Python!
+# Just coding practice
 
-This is my Python Training repo
-
-All the codes written during any python learning are pushed here
+Nothing to see here
