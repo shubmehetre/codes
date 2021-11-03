@@ -1,3 +1,5 @@
+package DavidBanas;
+
 /**
  * Author : Shubham A. Mehetre
  * Purpose: Practicing variables in Java

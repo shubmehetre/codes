@@ -1,4 +1,4 @@
-/*
+package DavidBanas;/*
   Author: Shubham A. Mehetre
   Project: Guessing game
   Purpose: Scanner Practice
@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ScannerProject {
 
-    public int inputTaker() {
+    public static int inputTaker() {
         Scanner sc = new Scanner(System.in);
         System.out.print("type here: ");
         int x = 0;
@@ -23,7 +23,6 @@ public class ScannerProject {
     }
 
     public static void main(String[] args) {
-        ScannerProject obj = new ScannerProject();
 
         System.out.print("-------------GUESSING GAME------------------\n");
         System.out.println("Guess the number! its between 1 and 10\nYou got 3 tries\n");
@@ -33,7 +32,7 @@ public class ScannerProject {
         System.out.println(randNum);
 
         for (int i = 3; i > 0; i--) {
-            int userInput = obj.inputTaker();
+            int userInput = inputTaker();
             if (userInput == randNum) {
                 System.out.println("!!!!!!!!!YOU WON!!!!!!!!!!\n");
                 break;
@@ -45,5 +44,3 @@ public class ScannerProject {
         }
     }
 }
-
-
