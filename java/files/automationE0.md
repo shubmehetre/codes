@@ -2,7 +2,7 @@
 
 - Automatic simulating all the functionalities of our webserver.
 
-## Benifits
+## Benefits
 
 - Speed
 - reliable
