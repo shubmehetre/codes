@@ -7,7 +7,7 @@ package DavidBanas;/*
 import java.util.Random;
 import java.util.Scanner;
 
-public class ScannerProject {
+public class ScannerProject{
 
     public static int inputTaker() {
         Scanner sc = new Scanner(System.in);
@@ -17,19 +17,20 @@ public class ScannerProject {
             x =  sc.nextInt();
         } else {
             System.out.println("Pls enter a number");
-            inputTaker();
+            return inputTaker();
         }
         return x;
     }
 
     public static void main(String[] args) {
 
+
         System.out.print("-------------GUESSING GAME------------------\n");
         System.out.println("Guess the number! its between 1 and 10\nYou got 3 tries\n");
 
         Random r = new Random();
         int randNum = r.nextInt(11);
-        System.out.println(randNum);
+        System.out.println("Answer: " + randNum);
 
         for (int i = 3; i > 0; i--) {
             int userInput = inputTaker();

@@ -4,7 +4,12 @@ package DavidBanas;
  * Author : Shubham A. Mehetre
  * Purpose: Practicing variables in Java
  */
+class StaticTest {
+    int tester2 = 10;
+
+}
 public class Variables {
+
     public static void main(String [] args) {
 
         // fields/variables in java
@@ -15,6 +20,12 @@ public class Variables {
         boolean myBool = true;
         byte myByte = 127;
         char myChar = 'A';
+        int testStatic = 1000;
+
+        Operators op1 = new Operators();
+
+        op1.testPro();
+
 
 
 /*
@@ -65,7 +76,7 @@ public class Variables {
         System.out.println(test2.getClass());
 
         Integer test3 = 20;
-        int test1 = new Integer(5);
+        int test1 = 5;
         System.out.println(test1);
 
     }
