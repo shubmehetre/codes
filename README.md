@@ -1,3 +1,3 @@
-# Just coding practice.
+# Just coding practice
 
 Nothing to see here
