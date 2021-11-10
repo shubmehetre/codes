@@ -22,9 +22,11 @@ public class Variables {
         char myChar = 'A';
         int testStatic = 1000;
 
+/*
+        // create obj of Operators class and calling method
         Operators op1 = new Operators();
-
         op1.testPro();
+*/
 
 
 

@@ -22,6 +22,19 @@ public class ScannerProject{
         return x;
     }
 
+/*
+        // runs infinitely.
+        System.out.println("Enter a num: ");
+        while (true) {
+            Scanner sc = new Scanner(System.in);
+            if (!(sc.hasNextInt())) {
+                System.out.println("you did not enter a num");
+            } else {
+                System.out.println("thanks for entering a num");
+            }
+        }
+*/
+
     public static void main(String[] args) {
 
 
