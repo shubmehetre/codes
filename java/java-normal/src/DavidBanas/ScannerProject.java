@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ScannerProject{
 
-    public static int inputTaker() {
+    public static int inputTaker(int tries) {
         Scanner sc = new Scanner(System.in);
         System.out.print("type here: ");
         int x = 0;
@@ -17,26 +17,13 @@ public class ScannerProject{
             x =  sc.nextInt();
         } else {
             System.out.println("Pls enter a number");
-            return inputTaker();
+            System.out.println(tries + " tries left");
+            return inputTaker(tries);
         }
         return x;
     }
 
-/*
-        // runs infinitely.
-        System.out.println("Enter a num: ");
-        while (true) {
-            Scanner sc = new Scanner(System.in);
-            if (!(sc.hasNextInt())) {
-                System.out.println("you did not enter a num");
-            } else {
-                System.out.println("thanks for entering a num");
-            }
-        }
-*/
-
     public static void main(String[] args) {
-
 
         System.out.print("-------------GUESSING GAME------------------\n");
         System.out.println("Guess the number! its between 1 and 10\nYou got 3 tries\n");
@@ -46,7 +33,7 @@ public class ScannerProject{
         System.out.println("Answer: " + randNum);
 
         for (int i = 3; i > 0; i--) {
-            int userInput = inputTaker();
+            int userInput = inputTaker(i);
             if (userInput == randNum) {
                 System.out.println("!!!!!!!!!YOU WON!!!!!!!!!!\n");
                 break;
