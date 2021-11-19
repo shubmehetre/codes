@@ -10,6 +10,12 @@ class StaticTest {
 }
 public class Variables {
 
+    static int testClassVar = 20;
+
+    public void tester1(){
+        System.out.println("in tester1 static var = " + testClassVar);
+    }
+
     public static void main(String [] args) {
 
         // fields/variables in java
@@ -74,12 +80,14 @@ public class Variables {
         int testingParse = Integer.parseInt(strFromInt);
         System.out.println(testingParse);
 */
+/*
         String test2 = new String("haha");
         System.out.println(test2.getClass());
 
         Integer test3 = 20;
         int test1 = 5;
         System.out.println(test1);
+*/
 
     }
 }
