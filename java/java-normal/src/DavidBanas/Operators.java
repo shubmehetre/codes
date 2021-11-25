@@ -44,6 +44,10 @@ public class Operators {
         System.out.println(myGrade3);
 
 /*
+        Scanner sc = new Scanner(System.in);
+        System.out.print("What grade did you get? ");
+        char myGrade = sc.next().charAt(0);
+
         switch (myGrade){
             case 'a':
                 System.out.println("you get cake");

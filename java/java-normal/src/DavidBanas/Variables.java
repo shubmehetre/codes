@@ -4,10 +4,6 @@ package DavidBanas;
  * Author : Shubham A. Mehetre
  * Purpose: Practicing variables in Java
  */
-class StaticTest {
-    int tester2 = 10;
-
-}
 public class Variables {
 
     static int testClassVar = 20;
