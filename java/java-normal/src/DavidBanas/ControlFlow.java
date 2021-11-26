@@ -30,12 +30,6 @@ public class ControlFlow {
 
         // passing strings to switch
 
-        for (int i = 0; i<5 ; i++ ){
-            for(int j = 0; j<i+1 ; j++ ){
-                System.out.print("* ");
-            }
-            System.out.println();
-        }
         String asd = "RAM";
 
         switch (asd.toLowerCase()){
@@ -56,13 +50,22 @@ public class ControlFlow {
 
         // for loops
 
-        // printing start pattern(classic)
-        int num = 4;
-
-        for (int i = 0 ; i < num ; i++){
-            for(int j = num+2 ; j>i ; j++){
-                 
+        // right angled triangle pattern
+        for (int i = 0; i<5 ; i++ ){
+            for(int j = 0; j<i+1 ; j++ ){
+                System.out.print("*");
             }
+            System.out.println();
+        }
+
+        // printing full pyramid pattern
+        int num = 4;
+        for (int i = 0 ; i < num ; i++){
+            for(int j = 0 ; j<num-1-i ; j++){
+                System.out.print(" ");
+            }
+            for(int k = 0; k< (i*2)+1 ; k++)
+                System.out.print("*");
             System.out.println();
         }
 
