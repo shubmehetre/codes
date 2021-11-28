@@ -1,14 +1,7 @@
 package com.herokuapp.theinternet;
 
-    interface Hello {
-        void test1();
-        void test2();
-        public static void test6(){
-            System.out.println("a static mehod in interface Hello");
-        }
-    }
 
-public class LoginTest implements  Hello2{
+public class LoginTest {
 
     public void test1(){
         System.out.println("test1 from class LoginTest");
@@ -33,7 +26,6 @@ public class LoginTest implements  Hello2{
         obj1.test1();
         obj2.test1();
 
-        Hello.test6();
     }
 
 }
