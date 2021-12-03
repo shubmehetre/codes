@@ -23,12 +23,12 @@ public class ZeeBusiness {
         driver.manage().window().maximize();
 
         WebElement searchBox = driver.findElement(By.xpath("//input[@id='search']"));
-        searchBox.sendKeys("Zee Business Live");
+        searchBox.sendKeys("Zee News Live");
 
         WebElement searchButton = driver.findElement(By.xpath("//button[@id='search-icon-legacy']"));
         searchButton.click();
 
-        WebElement result = driver.findElement(By.xpath("//a[@aria-label='Zee Business LIVE | 1st DEC | Business & Financial News | share bazaar | Anil Singhvi | News Update by Zee Business 198,676 views']"));
+        WebElement result = driver.findElement(By.xpath("//img[@src='https://i.ytimg.com/an_webp/0bnkSroqlOE/mqdefault_6s.webp?du=3000&sqp=CJ_Ko40G&rs=AOn4CLDc9qRTs3rVk6noVK3J3SygqWH7cQ']"));
         result.click();
 
         WebElement miniPlayerButton = driver.findElement(By.xpath("//button['data-tooltip-target-id='ytp-miniplayer-button']"));

@@ -3,7 +3,10 @@ package com.herokuapp.theinternet;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.Objects;
 
 public class LoginTest {
 
@@ -18,15 +21,11 @@ public class LoginTest {
         // create webdriver
         ChromeDriver driver = getChromeDriver();
 
-        //sleep 3 secs
-        sleep(2000);
-
         // open site
         // Create a separate properties files for this n n
         String url ="https://the-internet.herokuapp.com/login" ;
         driver.get(url);
         driver.manage().window().maximize();
-        System.out.println("The site is opened and maximized");
 
         sleep(2000);
 
@@ -44,12 +43,15 @@ public class LoginTest {
         sleep(2000);
 
         //verify if login was successful
-        WebElement logoutButton = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
+        String currentUrl  = driver.getCurrentUrl();
+
+        String finalUrl = "https://the-internet.herokuapp.com/secure";
+
         sleep(4000);
+        Assert.assertEquals(finalUrl, currentUrl, "GO HOME");
 
-        // close browser
-        //driver.quit();
-
+        WebElement logoutButton = driver.findElement(By.xpath("//a[@class='button secondary radius']"));
+        Assert.assertTrue(logoutButton.isDisplayed(), "Logout button not visible" );
     }
 
     private static ChromeDriver getChromeDriver() {
