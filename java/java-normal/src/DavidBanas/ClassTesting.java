@@ -25,19 +25,3 @@ public class ClassTesting {
         System.out.println("changed value of test3 = " + test3);
     }
 }
-
-class ClassTesting2 extends ClassTesting{
-
-    int test4;
-
-    ClassTesting2(int test1Value, int test2Value, String strValue, int test4Value) {
-        super(test1Value, test2Value, strValue);
-        test4 = test1Value;
-    }
-
-
-    public void newTest4Value(int a){
-        test4 = a;
-        System.out.println("changed value of test4 = " + test4);
-    }
-}
