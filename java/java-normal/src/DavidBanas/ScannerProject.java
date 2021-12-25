@@ -5,6 +5,7 @@ package DavidBanas;
   Purpose: Scanner Practice
  */
 
+import java.util.Objects;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -22,7 +23,12 @@ public class ScannerProject {
         int userInput;
         if (sc.hasNextInt()) {
             userInput = sc.nextInt();
-        } else {
+        }
+        else if (Objects.equals(sc.nextLine(), "fuck you"))  {
+            System.out.println("You are done here..");
+            return -1;
+        }
+        else {
             System.out.println("Do u call that a number??!");
             System.out.println(tries + " tries left");
             return inputTaker(tries);
