@@ -4,15 +4,41 @@ package DavidBanas;
  * Author : Shubham A. Mehetre
  * Purpose: Practicing variables in Java
  */
-public class Variables {
+class Variables {
 
-    static int testClassVar = 20;
+    int classVar = 10; // instance variables
+    static int staticClassVar = 20; // class variables
 
-    public void tester1(){
-        System.out.println("in tester1 static var = " + testClassVar);
+    public void classVarTester(){
+        System.out.println("in tester1 static var = " + classVar);
+    }
+
+    public void StaticClassVarTester(){
+        System.out.println("in tester1 static var = " + staticClassVar);
     }
 
     public static void main(String [] args) {
+
+
+        Variables v1 = new Variables();
+        Variables v2 = new Variables();
+
+        System.out.println("class var access using v1 is : " + v1.classVar);
+        System.out.println("class var access using v2 is : " + v2.classVar);
+        v1.classVar++;
+        System.out.println("class var ++ using v1 is : " + v1.classVar);
+        v2.classVar++;
+        System.out.println("class var ++ using v2 is : " + v2.classVar);
+
+        System.out.println();
+
+        System.out.println("static var access using v1 is : " + staticClassVar);
+        System.out.println("static var access using v2 is : " + staticClassVar);
+        staticClassVar++;
+        System.out.println("static var ++ using v1 is : " + staticClassVar);
+        staticClassVar++;
+        System.out.println("static var ++ using v2 is : " + staticClassVar);
+
 
         // fields/variables in java
         int myInt = 10;
