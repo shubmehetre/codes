@@ -4,17 +4,17 @@ class ConstructorsPractice{
     public int width = 0;
     public int height = 0;
 
+    ConstructorsPractice(){
+//      this(10 , 15);                                      // this will call the parameterized constructor
+        System.out.println("Hi from default constructor");
+    }
+
     ConstructorsPractice(int x , int y){
-        width = x;
-        height = y;
+        this();                                             // this has to be 1st statement in the constructor body
+        System.out.println("addition is = " + (x+y));
     }
 
-    int getArea(){
-        return width * height;
-    }
     public static void main(String[] args) {
-
-        int sum = new ConstructorsPractice(10 , 20).getArea();
-        System.out.println(sum);
+        ConstructorsPractice obj1 = new ConstructorsPractice(10, 15);
     }
 }
