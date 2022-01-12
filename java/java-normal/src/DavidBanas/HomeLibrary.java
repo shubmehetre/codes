@@ -1,29 +1,23 @@
+//
 package DavidBanas;
 // Adding books to home library
 
 import java.util.Scanner;
 
 public class HomeLibrary {
-    private int bookID;
-    private String bookName;
-    private static int totalBookCount = 0;
-
-    HomeLibrary( int bookID, String bookName ){
-        this.bookID = bookID;
-        this.bookName = bookName;
-        totalBookCount++;
-    }
+    static int id = 101;
 
     HomeLibrary(){
-        System.out.println("Pass Id and name when creating objects");
+        System.out.println("\nNow Constructor" +"\nHi From in CONSTRUCTOR\n");
     }
 
     public static void main(String[] args) {
-        HomeLibrary homer1 = new HomeLibrary(101 ,"Illiyad by Homer");
-        HomeLibrary homer2 = new HomeLibrary(101 ,"Odyssee by Homer");
-        HomeLibrary orwell = new HomeLibrary(101 ,"Animal Farm");
-        HomeLibrary tester = new HomeLibrary();
+        HomeLibrary h1 = new HomeLibrary();
+        System.out.println("Now in main" + "\nHi from MAIN method");
+    }
 
-        System.out.println("Total books added are " + HomeLibrary.totalBookCount);
+    static {
+        System.out.println("Hi from STATIC INIT BLOCK");
+        System.out.println("class variable id is: " + id + "\nStill in static init block");
     }
 }
