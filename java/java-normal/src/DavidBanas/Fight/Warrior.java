@@ -17,8 +17,12 @@ public class Warrior {
         this.blockMax = blockMax;
     }
 
-    public void attack(){
-        
+    public int attack(){
+        return 1 + (int)(Math.random() * ((attackMax - 1) + 1));
+    }
+
+    public int block(){
+        return 1 + (int)(Math.random() * ((blockMax - 1) + 1));
     }
 
     public void setName(String name) {
