@@ -1,7 +1,5 @@
 package DavidBanas.Fight;
 
-import java.util.SortedMap;
-
 public class Battle {
     public static void startFight(Warrior w1, Warrior w2) throws InterruptedException {
         while (true){
@@ -40,8 +38,5 @@ public class Battle {
             return "GAME OVER";
         }
         else return "Fight Again";
-
     }
-
-
 }

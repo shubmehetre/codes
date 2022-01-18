@@ -18,8 +18,7 @@ public class Warrior {
     }
 
     public int attack(){
-        return 1 + (int)(Math.random() * ((attackMax - 1) + 1));
-    }
+        return 1 + (int)(Math.random() * ((attackMax - 1) + 1)); }
 
     public int block(){
         return 1 + (int)(Math.random() * ((blockMax - 1) + 1));
@@ -31,5 +30,4 @@ public class Warrior {
     public String getName(){
         return name;
     }
-
 }
