@@ -2,8 +2,7 @@ package DavidBanas;
 
 public class Tester {
 
-    public static void main(String[] args) {
-
+    String getName(){
+        return "rocky bhai";
     }
-
 }
