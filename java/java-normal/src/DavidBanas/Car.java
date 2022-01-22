@@ -1,6 +1,7 @@
 package DavidBanas;
 
-public abstract  interface Car {
+public interface Car {
+    int x = 10;
     void gas();
     void brake();
     void clutch();
@@ -10,9 +11,12 @@ public abstract  interface Car {
     }
 }
 
-class bmw extends Tester implements Car {
+
+class bmw implements Car, Tester{
     @Override
     public void gas() {
+        System.out.println(Car.x);
+        System.out.println(Tester.x);
         System.out.println("accelerating");
     }
 
@@ -41,7 +45,5 @@ class bmw extends Tester implements Car {
 
         c1.peddle();
 
-        Tester t1 = new Tester();
-        System.out.println(t1.getName());
     }
 }

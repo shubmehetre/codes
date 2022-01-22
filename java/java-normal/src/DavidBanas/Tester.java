@@ -1,8 +1,6 @@
 package DavidBanas;
 
-public class Tester {
+public interface Tester {
+    int x = 5;
 
-    String getName(){
-        return "rocky bhai";
-    }
 }
