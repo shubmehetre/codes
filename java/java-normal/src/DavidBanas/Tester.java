@@ -1,6 +1,9 @@
 package DavidBanas;
 
 public interface Tester {
-    int x = 5;
+    int x = 10;
 
+    void getName(){
+        System.out.println("my name raul");
+    }
 }
