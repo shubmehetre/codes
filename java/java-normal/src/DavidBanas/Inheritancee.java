@@ -7,21 +7,8 @@ public class Inheritancee extends child2 {
 
     int main_num = 10;
     public static void main(String[] args) {
-        System.out.println("from child's main func");
 
-        child2 c2 = new child2();
-        Object obj = new Inheritancee();
-
-        Inheritancee hh = (Inheritancee) obj;
-
-        // object casting
-        System.out.println(((Inheritancee) obj).main_num);
-
-        String name = c2.getName();
-        System.out.println("name is " + name);
-
-        int id = c2.getId();
-        System.out.println("id is " + id);
+        Inheritancee hh = new Inheritancee();
 
     }
 }
@@ -37,6 +24,9 @@ class child1 {
 }
 
 class child2 extends child1{
+    child2(){
+        System.out.println("child 2 constructor");
+    }
     int child2_num = 10;
     public int getId(){
         return 101;
