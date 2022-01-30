@@ -14,7 +14,13 @@ public class Inheritancee extends child2 {
 }
 
 class child1 {
-    int child_id;
+    int child_id = 10;
+
+    child1(){
+        String name = getName();
+        System.out.println(name);
+        child_id = 12;
+    }
     public String getName() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Name: ");
