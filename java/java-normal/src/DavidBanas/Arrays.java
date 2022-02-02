@@ -4,8 +4,13 @@ import java.util.Scanner;
 
 public class Arrays {
     public static void main(String[] args) throws InterruptedException {
+        GoHome g1 = new GoHome();
+        System.out.println(g1.testStr());
+        System.out.println(g1.x);
+
         Scanner sc = new Scanner(System.in);
 
+/*
         int[] idNums; // declaration
         idNums = new int[10]; // initialization
 
@@ -17,6 +22,8 @@ public class Arrays {
         for (int i = 0 ; i < 10 ; i++){
             System.out.print(idNums[i] + " ");
         }
+*/
+
 
     }
 }
