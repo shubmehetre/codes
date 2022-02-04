@@ -10,6 +10,7 @@ public class Inheritancee extends child2 {
 
         Inheritancee hh = new Inheritancee();
 
+        String catcher = hh.getName();
     }
 }
 

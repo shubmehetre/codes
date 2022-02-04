@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Arrays {
     public static void main(String[] args) throws InterruptedException {
         GoHome g1 = new GoHome();
-        System.out.println(g1.testStr());
         System.out.println(g1.x);
 
         Scanner sc = new Scanner(System.in);
