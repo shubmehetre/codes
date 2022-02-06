@@ -1,20 +1,23 @@
 package DavidBanas;
-interface Tester3 {
-    int x = 10;
 
-    static void getName(){
-        System.out.println("my name raul");
-    }
-    default void getID(){
-        System.out.println("my id is 101");
-    }
-}
-
-public class Tester2 implements Tester3{
-
+public class Tester2 {
     public static void main(String[] args) {
-        Tester2 t1 = new Tester2();
-        t1.getID();
-    }
+        int x = 10;
+        String num1 = "10";
 
+        double y = 10.5;
+        String num2 = "10.5";
+
+        System.out.println(Integer.valueOf(x));
+        System.out.println(Integer.valueOf(num1));
+        System.out.println(Double.valueOf(y));
+        System.out.println(Double.valueOf(num2));
+
+        System.out.println();
+
+        System.out.println((Integer.valueOf(x)).getClass());
+        System.out.println((Integer.valueOf(num1)).getClass());
+        System.out.println((Double.valueOf(y)).getClass());
+        System.out.println((Double.valueOf(num2)).getClass());
+    }
 }
