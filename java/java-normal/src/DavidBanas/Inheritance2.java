@@ -17,9 +17,12 @@ public class Inheritance2 extends MasterClass{
 
     public static void main(String... args) {
         Inheritance2 test1 = new Inheritance2();
+        System.out.println("HAHSDASDASDA");
+        System.out.println(test1.toString());
         test1.showName();
 
         MasterClass master1 = new Inheritance2();
+        System.out.println(master1.toString());
         master1.showName();
 
         MasterClass master2 = new MasterClass();

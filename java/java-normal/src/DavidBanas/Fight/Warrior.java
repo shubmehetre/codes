@@ -1,5 +1,9 @@
 package DavidBanas.Fight;
 
+class HAHA{
+    int x = 10;
+}
+
 // When a new warrior is created(initialized) we give it some attributes and functions
 public class Warrior {
     protected String name = "";

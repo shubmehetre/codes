@@ -1,5 +1,13 @@
 package DavidBanas;
 
+class Customer {
+    public String name;
+
+    public Customer(String name) {
+        this.name = name;
+    }
+}
+
 public class Tester2 {
     public static void main(String[] args) {
         int x = 10;
@@ -8,6 +16,9 @@ public class Tester2 {
         double y = 10.5;
         String num2 = "10.5";
 
+        System.out.println(num1);
+
+/*
         System.out.println(Integer.valueOf(x));
         System.out.println(Integer.valueOf(num1));
         System.out.println(Double.valueOf(y));
@@ -19,5 +30,6 @@ public class Tester2 {
         System.out.println((Integer.valueOf(num1)).getClass());
         System.out.println((Double.valueOf(y)).getClass());
         System.out.println((Double.valueOf(num2)).getClass());
+*/
     }
 }
