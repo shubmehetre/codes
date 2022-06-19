@@ -1,5 +1,5 @@
 # #####################################################
-# print(4/2 * 3)    # Always give a float
+print(4/2 * 3)    # Always give a float
 
 # underscore_nos = 40_00_000   # _ is ignored
 # print(underscore_nos + 1)
