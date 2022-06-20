@@ -30,3 +30,13 @@
 # Hi Alice
 # Hi Chris
 # ['Josh', 'Megan', 'tina', 'Alice', 'Chris', '1', '$', ['2', '3', ['4']]]
+
+
+str1 = "test"
+
+def prin(a):
+    print("in prin : asd")
+    print(f'{a} in prin')
+    socket.socket()
+
+print(str1.title)
