@@ -1,7 +1,7 @@
 # my_list = ['mango', 'apple', "banana", 'kiwi']
 
-# for i in my_list:
-#     print(f'i like {i.capitalize()}')
+for i in my_list:
+    print(f'i like {i.capitalize()}')
 
 # #O/P
 # i like Mango
