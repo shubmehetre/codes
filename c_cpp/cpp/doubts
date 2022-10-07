@@ -1,0 +1,10 @@
+===================================
+Pointers:
+
+int main (){
+
+  int x = 10;
+
+  int *b = &x; // here *b is a value? but that value is address
+
+}
