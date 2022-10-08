@@ -5,10 +5,17 @@ using namespace std;
 int main (){
 
   int x = 10;
-  int *a = x;
+  int *a = &x;
 
-  cout << &x << endl;
-  cout << a << endl;
+  int y = *a;
+
+  // cout << y;
+
+
+  char name [5] = {'s', 'h', 'u', 'b', 'h'};
+
+  cout << name[0] << endl;
+  cout << name[4];
 
 
 }
