@@ -6,6 +6,23 @@ int main (){
 
   int x = 10;
   int *a = &x;
+  int *b = a;
+
+  cout << "*a = " << *a;
+  cout << endl;
+  cout << "*b = " << *b;
+  cout << endl;
+
+  cout << "a = " << a;
+  cout << endl;
+  cout << "b = " << b;
+  cout << endl;
+
+  cout << "x = " << x;
+  cout << endl;
+  cout << "&x = " << &x;
+  cout << endl;
+
 
   int y = *a;
 
@@ -14,8 +31,7 @@ int main (){
 
   char name [5] = {'s', 'h', 'u', 'b', 'h'};
 
-  cout << name[0] << endl;
-  cout << name[4];
+
 
 
 }
