@@ -3,9 +3,13 @@
 using namespace std;
 
 int main() {
-  cout << sizeof('c') << endl;
-  cout << sizeof(char) << endl;
 
-  cerr << "lol error";
+  int x = 10;
+
+  int& xref = x;
+
+  cout << &xref << endl;
+
+  cout << &x;
 
 }
