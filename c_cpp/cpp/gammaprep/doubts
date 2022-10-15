@@ -26,3 +26,11 @@ public:
     }
 };
 ===========================================================================
+
+reverse() reverses inplace. is there any function to return a reversed string withuot changing orignal string
+===========================================================================
+How to come up with different logics? is it just by practice? is thre any pattern
+defanged...1.1.1.1 1[.] ....why not inplace
+===========================================================================
+for valid anagram problem:
+  v[s[i] - 'a'] do we need to do v[s[i] - (int)'a')] type casting
