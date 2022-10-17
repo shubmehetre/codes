@@ -34,3 +34,6 @@ defanged...1.1.1.1 1[.] ....why not inplace
 ===========================================================================
 for valid anagram problem:
   v[s[i] - 'a'] do we need to do v[s[i] - (int)'a')] type casting
+===========================================================================
+whats the point of DS ALGO. I hear majority ppl say they never use it...but mostly at product based companies this is asked
+mostly what developers do is translation. Translate business req into code.
