@@ -4,12 +4,10 @@ using namespace std;
 
 int main() {
 
-  int x = 10;
+  int x = 1024;
 
-  int& xref = x;
+  cout << x % 10;
 
-  cout << &xref << endl;
-
-  cout << &x;
+  return 0;
 
 }

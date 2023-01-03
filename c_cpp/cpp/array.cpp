@@ -1,21 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
-int main(){
+int main() {
 
   string test[] = {"asd", "zxc"};
 
-  cout << test[0] << " ";
-  cout << test[1] << " ";
+
+  for (auto i : test) {
+    cout << i << " ";
+  }
+
+  cout << "";
+
+
+  for(int i = 0 ; i<2; i++){
+    cout << " lol "<< *(test+i) ;
+  }
+
+
   /*
   for (int i = 0; i< test->length(); i++){
     cout << test[i];
   }
   */
-    cout << endl;
-    cout << test->length();
-    cout << endl;
-    cout << test->size();
-
+  cout << endl;
+  cout << test->length();
+  cout << endl;
+  cout << test->size();
 }

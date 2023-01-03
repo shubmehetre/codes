@@ -15,7 +15,9 @@ void reverse_dig(int &a, int &b) {
 
   while (a > 0) {
     rev_a = rev_a * 10 + a % 10;
+    cout<<" rev_a: "<< rev_a;
     a = a / 10;
+    cout<<" a: " << a;
   }
   a = rev_a;
 
