@@ -1,11 +1,16 @@
 #include <bits/stdc++.h>
+#include <vector>
+
 using namespace std;
 
 int main() {
 
-  int y = 10;
-  int *x = &y;
-  int *arr[] = {x};
+  vector<int> v = {2, 3, 4, 5};
 
-  cout << *arr[0] ;
+  v.insert(v.begin()+1, 7);
+
+  for (int i; i < v.size(); i++) {
+    cout << v[i] << " ";
+  }
 }
+// 

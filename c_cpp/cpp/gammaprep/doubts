@@ -54,3 +54,11 @@ why id is used in form and name used is select
     <br>
     <button type="submit">Get Price</button>
     </form>
+
+
+
+==============================
+  vector<int> vec = {1,2,3,4,5};
+
+  cout << vec.begin()[1] << endl;
+==============================
