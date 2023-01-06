@@ -1,16 +1,22 @@
+#include <algorithm>
 #include <bits/stdc++.h>
-#include <vector>
 
 using namespace std;
 
 int main() {
 
-  vector<int> v = {2, 3, 4, 5};
+  // Strings test
+  string x = "ASD";
 
-  v.insert(v.begin()+1, 7);
+  cout << *x.begin() << endl;
+  cout << *(x.end()-1) << endl;
 
-  for (int i; i < v.size(); i++) {
-    cout << v[i] << " ";
-  }
+  reverse(x.begin(), x.end());
+  reverse(x.begin(), x.end());
+
+
+  cout << x[0] << endl;
+  cout << x.at(0);
+
+
 }
-// 
