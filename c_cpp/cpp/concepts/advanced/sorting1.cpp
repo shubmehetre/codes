@@ -9,16 +9,18 @@ using namespace std;
 bool cmp(int a, int b){
 
   // here if a < b we switch. here this is a decending sort
-  if (a < b ){
-    return false;
-  }
-  return true;
+  // if (a < b ){
+  //   return true;
+  // }
+  // return false;
+
+  return a < b;
 
 }
 
 int main() {
 
-  vector<int> v = {6, 7, 8, 1, 2, 3, 4, 5};
+  vector<int> v = {0, 0, 8, 1, 2, 3, 4, 5};
 
   sort(v.begin(), v.end(), cmp);
 
