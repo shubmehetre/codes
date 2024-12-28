@@ -1,22 +1,36 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h> // Required for the pow() function
 
-float CompoundInterestCalc(int p, int r, int t, int f){
-    return p * pow((1+(r/f)), f*t);
-}
-int main (){
+int main() {
+    double principal, rate, time, compoundInterest, amount;
+    int n;
 
+    // Input: Principal amount, interest rate, time in years, and compounding frequency
+    printf("Enter the principal amount: ");
+    scanf("%lf", &principal);
     
-    int principle, rate, time, freq;
+    printf("Enter the annual interest rate (in percentage): ");
+    scanf("%lf", &rate);
+    
+    printf("Enter the time (in years): ");
+    scanf("%lf", &time);
+    
+    printf("Enter the number of times interest is compounded per year: ");
+    scanf("%d", &n);
 
-    printf("Enter Principle, Rate freq within a year and time:\n");
-    scanf("%d", &principle);
-    scanf("%d", &rate);
-    scanf("%d", &time);
-    scanf("%d", &freq);
+    // Convert interest rate from percentage to decimal
+    rate = rate / 100;
 
-    float interest = CompoundInterestCalc(principle, rate, time, freq);
+    // Compound interest formula: A = P * (1 + r/n)^(n*t)
+    amount = principal * pow((1 + rate / n), n * time);
 
-    printf("\nInterest is => %f\n", interest);
+    // Calculate compound interest
+    compoundInterest = amount - principal;
 
+    // Output the results
+    printf("Future Value (Amount): %.2lf\n", amount);
+    printf("Compound Interest: %.2lf\n", compoundInterest);
+
+    return 0;
 }
+
