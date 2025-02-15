@@ -1,7 +1,11 @@
 #include <stdio.h>
+#include <unistd.h>
 
 int main() {
 
-  char myName[5] = "Shub";
-  printf("%c\n", myName[4]);
+  printf("Testing buffer not flushing");
+  fflush(stdout);
+
+  sleep(5);
+
 }
