@@ -1,23 +1,23 @@
-# class Dog:
-#     '''General model for dog things'''
+class Dog:
+    '''General model for dog things'''
 
-#     def __init__(self,name,age):
-#         self.name = name
-#         self.age = age
-#         print(f"my dog's name is {name} and he is {age}")
-#         print()
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+        print(f"my dog's name is {name} and he is {age}")
+        print()
 
-#     def sit(self):
-#         print(f"{self.name} is now sitting")
+    def sit(self):
+        print(f"{self.name} is now sitting")
 
-#     def roll(self):
-#         print(f"{self.name} is doing a rollver")
+    def roll(self):
+        print(f"{self.name} is doing a rollver")
 
-# my_dog = Dog("tommy", 5)
-# my_dog.sit()
-# my_dog.roll()
+my_dog = Dog("tommy", 5)
+my_dog.sit()
+my_dog.roll()
 
-# print(Dog)
+print(Dog)
 # ######################################################################
 ## 
 # ## default values
@@ -204,22 +204,22 @@
 # ... Et voila!
 
 # square root : 12.88
-
-list1 = [1,2,3,]
-dict1 = {"name": "shubham", "location": "Miami"}
-
-class Car:
-    def __init__(self, name,year):
-        self.name = name
-        self.year = year
-    
-    def print_info(self):
-        print(f"Car is : {self.name} from {self.year}")
-
-
-mycar = Car("Tesla", 2020)
-
-mycar.print_info()
+# 
+# list1 = [1,2,3,]
+# dict1 = {"name": "shubham", "location": "Miami"}
+# 
+# class Car:
+#     def __init__(self, name,year):
+#         self.name = name
+#         self.year = year
+#     
+#     def print_info(self):
+#         print(f"Car is : {self.name} from {self.year}")
+# 
+# 
+# mycar = Car("Tesla", 2020)
+# 
+# mycar.print_info()
 
 
 

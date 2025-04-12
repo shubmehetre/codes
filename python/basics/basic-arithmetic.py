@@ -1,4 +1,10 @@
+""" 
+Multiline strings can be written
+    using three "s, and are often used
+    as documentation.
+"""
 # #####################################################
+
 print(4/2 * 3)    # Always give a float
 
 # underscore_nos = 40_00_000   # _ is ignored

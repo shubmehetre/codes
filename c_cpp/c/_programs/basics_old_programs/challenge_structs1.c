@@ -1,16 +1,16 @@
 #include<stdio.h>
 #define NAMELEN 20
 
-struct employee 
+typedef struct
 {
     char name[NAMELEN];
     char hireDate[NAMELEN];
     float salary;
-};
+}employee;
 
 int main (void)
 {
-    struct employee e1;
+    employee e1;
     int a = 1;
 
     printf("Enter employee %d's name, hiredate, salary\n", a);

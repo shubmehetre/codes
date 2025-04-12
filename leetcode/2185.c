@@ -9,6 +9,6 @@ int main(){
 		fgets(names, 100, stdin);
 	}
 	for (int i = 0 ; i< 3; i++){
-		fputs(names, 100, stdin);
+		fputs(names, stdin);
 	}
 }
